@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Menu",
+        "path": "/menu"
+    },
+    {
+        "name": "Export",
+        "path": "/export"
+    },
+    {
+        "name": "Clear Circuit",
+        "path": "/clearcircuit"
+    },
+    {
+        "name": "Clear All",
+        "path": "/clearall"
+    },
+    {
+        "name": "Undo",
+        "path": "/undo"
+    },
+    {
+        "name": "Redo",
+        "path": "/redo"
+    },
+    {
+        "name": "Make Gate",
+        "path": "/makegate"
+    }
+]

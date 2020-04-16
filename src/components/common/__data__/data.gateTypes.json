@@ -1,0 +1,26 @@
+[{
+        "name": "Probes"
+    },
+    {
+        "name": "Displays"
+    }, {
+        "name": "Half Turns"
+    }, {
+        "name": "Quater Turns"
+    }, {
+        "name": "Spinning"
+    },
+    {
+        "name": "Formulaic"
+    },
+    {
+        "name": "Parametrized"
+    },
+    {
+        "name": "Sampling"
+    },
+    {
+        "name": "Parity"
+    }
+
+]

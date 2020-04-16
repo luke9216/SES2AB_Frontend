@@ -1,7 +1,7 @@
 import React from "react";
 import HomePage from "./HomePage";
-import MakeGate from "./makeGate/MakeGate";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import MakeGate from "./makeGate/MakeGate";
 
 export interface RoutingProps {}
 

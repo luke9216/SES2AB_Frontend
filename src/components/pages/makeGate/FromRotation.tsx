@@ -1,14 +1,17 @@
-import React from "react";
-import { RouteComponentProps } from "react-router";
+import React, { Props } from "react";
 import { paperStyles } from "./styles";
 import Grid from "@material-ui/core/Grid";
 import { Button, TextField } from "@material-ui/core";
 
 interface FromRotationProps {
-  inputAxis?: any;
+  handleChange: Function;
+  handleClick: any;
 }
 
-const FromRotation: React.SFC<FromRotationProps> = () => {
+const FromRotation: React.FunctionComponent<FromRotationProps> = ({
+  handleChange,
+  handleClick,
+}) => {
   const classes = paperStyles();
 
   return (
@@ -18,10 +21,10 @@ const FromRotation: React.SFC<FromRotationProps> = () => {
       </Grid>
       <Grid item xs={12}>
         <TextField
-          id="outlined-basic"
           label="Axis"
           placeholder="X+Y"
           variant="outlined"
+          onChange={handleChange()}
         />
       </Grid>
       <Grid item xs={12}>
@@ -50,7 +53,7 @@ const FromRotation: React.SFC<FromRotationProps> = () => {
           variant="outlined"
         />
       </Grid>
-      <Button variant="contained" color="primary">
+      <Button variant="contained" color="primary" onClick={handleClick()}>
         Create Rotation Gate
       </Button>
     </Grid>

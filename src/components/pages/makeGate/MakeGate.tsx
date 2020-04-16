@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { RouteComponentProps } from "react-router";
 import FromRotation from "./FromRotation";
 import FromCircuit from "./FromCircuit";
@@ -9,10 +9,18 @@ import { paperStyles } from "./styles";
 export interface MakeGateProps {
   props?: any;
   match?: RouteComponentProps;
+  axis?: String;
+  angle?: String;
 }
 
-const MakeGate: React.SFC<MakeGateProps> = ({ props }) => {
+const printValue = () => (event: any) => {
+  var message: string = "RENZ WAS HERE";
+  console.log(message);
+};
+
+export const MakeGate: React.FunctionComponent<MakeGateProps> = () => {
   const classes = paperStyles();
+  const [axis, setAxis] = useState(0);
 
   return (
     <div>
@@ -24,7 +32,7 @@ const MakeGate: React.SFC<MakeGateProps> = ({ props }) => {
         spacing={1}
       >
         <Grid item xs={3}>
-          <FromRotation />
+          <FromRotation handleChange={setAxis} handleClick={printValue} />
         </Grid>
         <Grid item xs={3}>
           <FromMatrix />

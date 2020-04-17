@@ -3,11 +3,14 @@
     },
     {
         "name": "Displays"
-    }, {
+    }, 
+    {
         "name": "Half Turns"
-    }, {
+    }, 
+    {
         "name": "Quater Turns"
-    }, {
+    }, 
+    {
         "name": "Spinning"
     },
     {
@@ -21,6 +24,33 @@
     },
     {
         "name": "Parity"
+    },
+    {    
+        "name": "X/Y Probes"
+    },
+    {
+        "name": "Order"
+    }, 
+    {
+        "name": "Frequency"
+    }, 
+    {
+        "name": "Inputs"
+    }, 
+    {
+        "name": "Arithmetic"
+    },
+    {
+        "name": "Compare"
+    },
+    {
+        "name": "Modular"
+    },
+    {
+        "name": "Scalar"
+    },
+    {
+        "name": "Custom Gates"
     }
 
 ]

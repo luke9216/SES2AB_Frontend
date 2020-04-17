@@ -11,8 +11,11 @@ export interface ToolBox {
   name: string;
 }
 
+
 const ToolBox: React.SFC<ToolBoxProps> = () => {
-  return <GateTypes types={gateTypes as Array<GateTypeTab>}></GateTypes>;
+  return <div>
+  <GateTypes types={gateTypes as Array<GateTypeTab>}></GateTypes>;
+  </div>
 };
 
 export default ToolBox;

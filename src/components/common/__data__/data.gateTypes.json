@@ -1,26 +1,36 @@
 [{
-        "name": "Probes"
+        "name": "Probes",
+        "gates": ["gate 1", "gate 2"]
     },
     {
-        "name": "Displays"
+        "name": "Half Turns",
+        "gates": ["gate c", "gate d"]
+
     }, {
-        "name": "Half Turns"
+        "name": "Quater Turns",
+        "gates": ["gate e", "gate f"]
     }, {
-        "name": "Quater Turns"
-    }, {
-        "name": "Spinning"
+        "name": "Spinning",
+        "gates": ["gate g", "gate f"]
+
     },
     {
-        "name": "Formulaic"
+        "name": "Formulaic",
+        "gates": ["gate h", "gate i"]
     },
     {
-        "name": "Parametrized"
+        "name": "Parametrized",
+        "gates": ["gate j", "gate k"]
+
     },
     {
-        "name": "Sampling"
+        "name": "Sampling",
+        "gates": ["gate l", "gate m"]
+
     },
     {
-        "name": "Parity"
+        "name": "Parity",
+        "gates": ["gate1", "gate2"]
     }
 
 ]

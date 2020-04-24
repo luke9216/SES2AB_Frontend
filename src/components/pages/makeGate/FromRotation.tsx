@@ -4,13 +4,15 @@ import Grid from "@material-ui/core/Grid";
 import { Button, TextField } from "@material-ui/core";
 
 interface FromRotationProps {
+  axis: string;
   handleChange: Function;
-  handleClick: any;
+  handleSubmit: Function;
 }
 
 const FromRotation: React.FunctionComponent<FromRotationProps> = ({
+  axis,
   handleChange,
-  handleClick,
+  handleSubmit,
 }) => {
   const classes = paperStyles();
 
@@ -21,39 +23,29 @@ const FromRotation: React.FunctionComponent<FromRotationProps> = ({
       </Grid>
       <Grid item xs={12}>
         <TextField
+          id={axis}
           label="Axis"
+          name={axis}
           placeholder="X+Y"
           variant="outlined"
-          onChange={handleChange()}
+          onChange={handleChange(axis)}
         />
       </Grid>
       <Grid item xs={12}>
-        <TextField
-          id="outlined-basic"
-          label="Angle"
-          placeholder="45"
-          variant="outlined"
-        />
+        <TextField label="Angle" placeholder="45" variant="outlined" />
       </Grid>
       <Grid item xs={12}>
-        <TextField
-          id="outlined-basic"
-          label="Global Phase"
-          placeholder="0"
-          variant="outlined"
-        />
+        <TextField label="Global Phase" placeholder="0" variant="outlined" />
       </Grid>
-
       <text> placeholder</text>
       <Grid item xs={12}>
         <TextField
-          id="outlined-basic"
           label="Circuit Symbol"
           placeholder="[The matrix]"
           variant="outlined"
         />
       </Grid>
-      <Button variant="contained" color="primary" onClick={handleClick()}>
+      <Button variant="contained" color="primary" onClick={handleSubmit()}>
         Create Rotation Gate
       </Button>
     </Grid>

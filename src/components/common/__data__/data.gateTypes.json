@@ -1,6 +1,6 @@
 [{
         "name": "Probes",
-        "gates": ["gate 1", "gate 2"]
+        "gates": [" P ", " ZP "]
     },
     {
         "name": "Half Turns",

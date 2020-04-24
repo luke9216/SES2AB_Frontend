@@ -26,6 +26,6 @@ export const paperStyles = makeStyles((theme) => ({
     top: 10,
     position: "absolute",
     marginTop: "20px",
-    marginLeft: "20px",
+    marginLeft: "40px",
   },
 }));

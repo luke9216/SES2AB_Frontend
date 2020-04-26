@@ -9,11 +9,14 @@ import { logoStyles } from "../common/styles"
 export interface HomePageProps {
     props?: any;
     match?: RouteComponentProps;
+    path?: any;
 }
 
 const HomePage: React.SFC<HomePageProps> = ({ props }) => {
     const classes = logoStyles();
-    const { path } = props.match;
+    // const path = props.match;
+    const path = "";
+
     return (
         <NavigationButtons path={path} navigationTabs={navigationTabs as Array<NavigationButtonsTab>}>
             <img src={logo} className={classes.logo} alt="UTS Logo" />

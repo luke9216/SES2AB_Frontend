@@ -4,10 +4,20 @@ import './App.css';
 
 export interface AppProps { }
 
-const App: React.SFC<AppProps> = () => {
-  return (
-    <Routing />
-  );
+export const App: React.SFC<AppProps> = () => {
+  return <Routing />
 }
 
-export default App;
+// export interface AppProps {
+// }
+
+// export interface AppState {
+// }
+
+// class App extends React.Component<AppProps, AppState> {
+//   render() {
+//     return (<Routing />);
+//   }
+// }
+
+// export default App;

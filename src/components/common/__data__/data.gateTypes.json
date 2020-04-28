@@ -1,56 +1,45 @@
 [{
-        "name": "Probes"
+        "name": "Probes",
+        "gates": [" P ", " ZP "],
+        "description": "Description for Probes"
     },
     {
-        "name": "Displays"
-    }, 
-    {
-        "name": "Half Turns"
-    }, 
-    {
-        "name": "Quater Turns"
-    }, 
-    {
-        "name": "Spinning"
+        "name": "Half Turns",
+        "gates": ["gate c", "gate d"],
+        "description": "Description for Half Turns"
+
+
+    }, {
+        "name": "Quarter Turns",
+        "gates": ["gate e", "gate f"],
+        "description": "Description for Quarter Turns"
+    }, {
+        "name": "Spinning",
+        "gates": ["gate g", "gate f"],
+        "description": "Description for Spinning"
+
     },
     {
-        "name": "Formulaic"
+        "name": "Formulaic",
+        "gates": ["gate h", "gate i"],
+        "description": "Description for Formulaic"
     },
     {
-        "name": "Parametrized"
+        "name": "Parametrized",
+        "gates": ["gate j", "gate k"],
+        "description": "Description for Parametrized"
+
     },
     {
-        "name": "Sampling"
+        "name": "Sampling",
+        "gates": ["gate l", "gate m"],
+        "description": "Description for Sampling"
+
     },
     {
-        "name": "Parity"
-    },
-    {    
-        "name": "X/Y Probes"
-    },
-    {
-        "name": "Order"
-    }, 
-    {
-        "name": "Frequency"
-    }, 
-    {
-        "name": "Inputs"
-    }, 
-    {
-        "name": "Arithmetic"
-    },
-    {
-        "name": "Compare"
-    },
-    {
-        "name": "Modular"
-    },
-    {
-        "name": "Scalar"
-    },
-    {
-        "name": "Custom Gates"
+        "name": "Parity",
+        "gates": ["gate1", "gate2"],
+        "description": "Description for Parity"
     }
 
 ]

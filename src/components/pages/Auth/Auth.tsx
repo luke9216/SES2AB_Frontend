@@ -1,6 +1,8 @@
 import React from "react";
 
-export interface AuthProps {}
+export interface AuthProps {
+  props: any;
+}
 
 const Auth: React.SFC<AuthProps> = () => {
   return (

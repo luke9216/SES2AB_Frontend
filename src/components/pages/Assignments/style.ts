@@ -1,17 +1,28 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export const assignmentStyles = makeStyles((theme) => ({
-  root: {},
+  root: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
   paper: {
     padding: theme.spacing(5),
     textAlign: "center",
     color: theme.palette.text.secondary,
   },
   heading1: {
-    color: "blue",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "red",
   },
   heading2: {
-    color: "",
+    color: "blue",
+  },
+  body1: {
+    color: "green",
+    font: "Serif",
   },
   dueDateBox: {
     background: "red",

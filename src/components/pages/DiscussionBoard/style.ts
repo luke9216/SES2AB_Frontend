@@ -1,7 +1,17 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export const discussionBoardStyles = makeStyles((theme) => ({
-  root: {},
+  header: {
+    border: "solid",
+    background: "grey",
+  },
+  tableTitle: {
+    color: "blue",
+    marginLeft: "20px",
+  },
+  rowStyle: {
+    color: "grey",
+  },
   paper: {
     padding: theme.spacing(5),
     textAlign: "center",

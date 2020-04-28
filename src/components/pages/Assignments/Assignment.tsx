@@ -1,37 +1,22 @@
 import * as React from "react";
-import {assignmentStyles} from ".style";
+import { assignmentStyles } from "./style";
+import AssignmentForm from "./AssignmentForm";
 
 export interface AssignmentProps {}
 
+const onClose = () => (event: any) => {
+  console.log("menu closed");
+};
+
+const onClick = () => (event: any) => {
+  console.log("this button was clicked");
+};
+
 const Assignment: React.SFC = () => {
+  const classes = assignmentStyles();
   return (
     <div>
-      <h1>Assignment</h1>
-      <Grid>
-        <h1>Assignment 1</h1>
-      </Grid>
-      <Grid>
-        <h1>Assignment 2</h1>
-      </Grid>
-      <Grid>
-        <h1>Assignment 3</h1>
-      </Grid>
-    </div>
-    <div>
-      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-  Open Menu
-</Button>
-<Menu
-  id="simple-menu"
-  anchorEl={anchorEl}
-  keepMounted
-  open={Boolean(anchorEl)}
-  onClose={handleClose}
->
-  <MenuItem onClick={handleClose}>Profile</MenuItem>
-  <MenuItem onClick={handleClose}>My account</MenuItem>
-  <MenuItem onClick={handleClose}>Logout</MenuItem>
-</Menu>
+      <AssignmentForm handleClose={onClose} />
     </div>
   );
 };

@@ -7,4 +7,14 @@ export const assignmentStyles = makeStyles((theme) => ({
     textAlign: "center",
     color: theme.palette.text.secondary,
   },
+  heading1: {
+    color: "blue",
+  },
+  heading2: {
+    color: "",
+  },
+  dueDateBox: {
+    background: "red",
+    border: "solid",
+  },
 }));

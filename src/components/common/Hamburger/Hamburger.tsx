@@ -11,11 +11,12 @@ import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/core";
-import MailIcon from "@material-ui/core";
 import Icon from "@material-ui/core/Icon";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
+import MenuIcon from "@material-ui/icons/Menu";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import IconButton from "@material-ui/core/IconButton";
+import { useTheme } from "@material-ui/core/styles";
 
 export interface HamburgerProps {
   props?: any;
@@ -33,7 +34,7 @@ const Hamburger: React.SFC<HamburgerProps> = () => {
   };
 
   const classes = hamburgerStyles();
-  const theme = hamburgerStyles();
+  const theme = useTheme();
 
   return (
     <div className={classes.root}>
@@ -45,9 +46,20 @@ const Hamburger: React.SFC<HamburgerProps> = () => {
         })}
       >
         <Toolbar>
-          <Typography variant="h6" noWrap>
-            Mini variant drawer
-          </Typography>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            edge="start"
+            className={clsx(classes.menuButton, {
+              [classes.hide]: open,
+            })}
+          >
+            <MenuIcon />
+            <Typography variant="h6" noWrap>
+              Your Navigation
+            </Typography>
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -64,21 +76,27 @@ const Hamburger: React.SFC<HamburgerProps> = () => {
         }}
       >
         <div className={classes.toolbar}>
-        <IconButton onClick={handleDrawerClose}>
-            {.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === "rtl" ? (
+              <ChevronRightIcon />
+            ) : (
+              <ChevronLeftIcon />
+            )}
           </IconButton>
         </div>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          {["Assignments", "Discussion Board", "Your Workshop", "Lectures"].map(
+            (text, index) => (
+              <ListItem button key={text}>
+                <ListItemText primary={text} />
+              </ListItem>
+            )
+          )}
         </List>
         <Divider />
         <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
+          {["Settings", "Contact", "Log Out"].map((text, index) => (
             <ListItem button key={text}>
               <ListItemText primary={text} />
             </ListItem>

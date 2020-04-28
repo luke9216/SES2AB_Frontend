@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export const hamburgerStyles = makeStyles((theme) => ({
+export const workshopStyles = makeStyles((theme) => ({
   root: {},
   paper: {
     padding: theme.spacing(5),

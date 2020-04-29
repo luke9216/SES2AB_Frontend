@@ -15,14 +15,16 @@ const GateTypes: React.SFC<GateTypesProps> = ({ gateTypes }) => {
     <React.Fragment>
       {gateTypes.map((tab: GateButtonTab, i) => (
         <Grid key={i} item direction="row">
-          <h1>{tab.gates}</h1>
+          <h1>{tab.name}</h1>
           <Grid container spacing={2}>
             {tab.gates.map((gate, j) => (
-              <Grid item spacing={1} xs>
-                <Button key={j} variant="contained">
-                  {gate}
-                </Button>
-              </Grid>
+              <Tooltip title={tab.description}>
+                <Grid item spacing={1} xs>
+                  <Button key={j} variant="contained">
+                    {gate}
+                  </Button>
+                </Grid>
+              </Tooltip>
             ))}
           </Grid>
         </Grid>

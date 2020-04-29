@@ -9,13 +9,18 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import Icon from "@material-ui/core/Icon";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import IconButton from "@material-ui/core/IconButton";
+import AssignmentIcon from "@material-ui/icons/Assignment";
+import DashboardIcon from "@material-ui/icons/Dashboard";
+import SettingsIcon from '@material-ui/icons/Settings';
+import WorkIcon from "@material-ui/icons/Work";
+import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
+import ContactSupportIcon from '@material-ui/icons/ContactSupport';
 import { useTheme } from "@material-ui/core/styles";
 
 export interface HamburgerProps {
@@ -56,10 +61,10 @@ const Hamburger: React.SFC<HamburgerProps> = () => {
             })}
           >
             <MenuIcon />
+            </IconButton>
             <Typography variant="h6" noWrap>
               Your Navigation
             </Typography>
-          </IconButton>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -89,6 +94,9 @@ const Hamburger: React.SFC<HamburgerProps> = () => {
           {["Assignments", "Discussion Board", "Your Workshop", "Lectures"].map(
             (text, index) => (
               <ListItem button key={text}>
+                <ListItemIcon> 
+                  {index % 2 === 0 ? <AssignmentIcon /> : <DashboardIcon />}
+                </ListItemIcon> 
                 <ListItemText primary={text} />
               </ListItem>
             )
@@ -98,6 +106,9 @@ const Hamburger: React.SFC<HamburgerProps> = () => {
         <List>
           {["Settings", "Contact", "Log Out"].map((text, index) => (
             <ListItem button key={text}>
+              <ListItemIcon> 
+                  {index % 2 === 0 ? <SettingsIcon /> : <ContactSupportIcon />}
+              </ListItemIcon> 
               <ListItemText primary={text} />
             </ListItem>
           ))}

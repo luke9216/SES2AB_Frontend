@@ -21,6 +21,7 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import WorkIcon from "@material-ui/icons/Work";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import ContactSupportIcon from '@material-ui/icons/ContactSupport';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useTheme } from "@material-ui/core/styles";
 
 export interface HamburgerProps {
@@ -95,10 +96,10 @@ const Hamburger: React.SFC<HamburgerProps> = () => {
             (text, index) => (
               <ListItem button key={text}>
                 <ListItemIcon> 
-                  {index % 2 === 0 ? <AssignmentIcon /> : <DashboardIcon />}
+                  {index === 0 ? <AssignmentIcon /> : <DashboardIcon /> && index === 1 ? <DashboardIcon /> : <AssignmentIcon /> && index % 4 === 2 ? <WorkIcon /> : <VideoLibraryIcon /> }
                 </ListItemIcon> 
                 <ListItemText primary={text} />
-              </ListItem>
+              </ListItem> 
             )
           )}
         </List>
@@ -107,7 +108,7 @@ const Hamburger: React.SFC<HamburgerProps> = () => {
           {["Settings", "Contact", "Log Out"].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon> 
-                  {index % 2 === 0 ? <SettingsIcon /> : <ContactSupportIcon />}
+                  {index === 2 ? <ExitToAppIcon /> : <ExitToAppIcon /> && index % 2 === 0 ? <SettingsIcon /> : <ContactSupportIcon />}
               </ListItemIcon> 
               <ListItemText primary={text} />
             </ListItem>

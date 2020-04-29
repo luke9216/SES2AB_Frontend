@@ -1,12 +1,9 @@
 import * as React from "react";
 import { assignmentStyles } from "./style";
-import AssignmentForm from "./AssignmentForm";
+import AssignmentForm, { IAssignmentTypes } from "./AssignmentForm";
+import assignments from "../../common/__data__/data.Assignments.json";
 
 export interface AssignmentProps {}
-
-const onClose = () => (event: any) => {
-  console.log("menu closed");
-};
 
 const onClick = () => (event: any) => {
   console.log("this button was clicked");
@@ -16,7 +13,7 @@ const Assignment: React.SFC = () => {
   const classes = assignmentStyles();
   return (
     <div>
-      <AssignmentForm handleClose={onClose} />
+      <AssignmentForm assignments={assignments as Array<IAssignmentTypes>} />
     </div>
   );
 };

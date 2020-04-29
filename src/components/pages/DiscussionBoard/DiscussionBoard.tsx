@@ -7,24 +7,54 @@ const DiscussionBoard: React.SFC = () => {
   const classes = discussionBoardStyles();
   return (
     <div className={classes.header}>
-      <head className={classes.tableTitle}>This the title of the forums</head>
       <body>
-        <h1>Discussion Forum</h1>
-        <table>
+        <h1 className={classes.tableTitle}>Discussion Forum</h1>
+        <table className={classes.tableStyle}>
           <tr className={classes.rowStyle}>
             <th>Discussion topic</th>
             <th>Replies</th>
             <th>Last Post</th>
+            <th>First Post</th>
           </tr>
-          <tr>
-            <th>Discussion1</th>
-            <th>User1</th>
-            <th>28th Apr</th>
-          </tr>
+          <tbody>
+            <tr>
+              <th>Discussion1</th>
+              <th>User 1 Test</th>
+              <th>28th Apr</th>
+              <th>Today 3:05pm</th>
+            </tr>
+            <tr className={classes.rowStyle}>
+              <th>Discussion1</th>
+              <th>User1 Test</th>
+              <th>28th Apr</th>
+              <th>Today 3:05pm</th>
+            </tr>
+            <tr>
+              <th>Discussion1</th>
+              <th>User1 Test</th>
+              <th>28th Apr</th>
+              <th>Today 3:05pm</th>
+            </tr>
+            <tr className={classes.rowStyle}>
+              <th>Discussion1</th>
+              <th>User1 Test</th>
+              <th>28th Apr</th>
+              <th>Today 3:05pm</th>
+            </tr>
+            <tr>
+              <th>Discussion1</th>
+              <th>User1 Test</th>
+              <th>28th Apr</th>
+              <th>Today 3:05pm</th>
+            </tr>
+          
+          </tbody>
+         
         </table>
       </body>
     </div>
   );
 };
+
 
 export default DiscussionBoard;

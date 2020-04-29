@@ -1,10 +1,12 @@
 import * as React from "react";
 import clsx from "clsx";
+import { ComponentType } from "react";
 import { hamburgerStyles } from "./style";
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
+import Link from "@material-ui/core/Link";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
@@ -17,19 +19,22 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import IconButton from "@material-ui/core/IconButton";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import DashboardIcon from "@material-ui/icons/Dashboard";
-import SettingsIcon from "@material-ui/icons/Settings";
 import WorkIcon from "@material-ui/icons/Work";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
-import ContactSupportIcon from "@material-ui/icons/ContactSupport";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { useTheme } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 
 export interface HamburgerProps {
   props?: any;
+  drawerDetails: Array<IhamburgerTypes>;
 }
 
-const Hamburger: React.SFC<HamburgerProps> = ({ children }) => {
+export interface IhamburgerTypes {
+  name: string;
+  path: string;
+}
+
+const Hamburger: React.SFC<HamburgerProps> = ({ children, drawerDetails }) => {
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -93,44 +98,26 @@ const Hamburger: React.SFC<HamburgerProps> = ({ children }) => {
         </div>
         <Divider />
         <List>
-          {["Assignments", "Discussion Board", "Your Workshop", "Lectures"].map(
-            (text, index) => (
-              <ListItem button key={text}>
-                <Button href="/toolbox">
-                  <ListItemIcon>
-                    {index === 0 ? (
-                      <AssignmentIcon />
-                    ) : <DashboardIcon /> && index === 1 ? (
-                      <DashboardIcon />
-                    ) : <AssignmentIcon /> && index % 4 === 2 ? (
-                      <WorkIcon />
-                    ) : (
-                      <VideoLibraryIcon />
-                    )}
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </Button>
-              </ListItem>
-            )
-          )}
-        </List>
-        <Divider />
-        <List>
-          {["Settings", "Contact", "Log Out"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index === 2 ? (
-                  <ExitToAppIcon />
-                ) : <ExitToAppIcon /> && index % 2 === 0 ? (
-                  <SettingsIcon />
-                ) : (
-                  <ContactSupportIcon />
-                )}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+          {drawerDetails.map((tab: IhamburgerTypes, key) => (
+            <ListItem button key={tab.name}>
+              <Button href={tab.path}>
+                <ListItemIcon>
+                  {key === 0 ? (
+                    <AssignmentIcon />
+                  ) : <DashboardIcon /> && key === 1 ? (
+                    <DashboardIcon />
+                  ) : <AssignmentIcon /> && key % 4 === 2 ? (
+                    <WorkIcon />
+                  ) : (
+                    <VideoLibraryIcon />
+                  )}
+                </ListItemIcon>
+                <ListItemText primary={tab.name} />
+              </Button>
             </ListItem>
           ))}
         </List>
+        <Divider />
       </Drawer>
       <main className={classes.content}>
         {/*Pushes content below toolbar*/}

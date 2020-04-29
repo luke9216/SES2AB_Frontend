@@ -1,21 +1,13 @@
 [{
     "name": "Assignments",
     "path": "/assignment"
-},
-{
-    "name": "Discussion Board",
-    "path": "/export"
-},
-{
+}, {
+    "name": "Discussion",
+    "path": "/discussion"
+}, {
     "name": "Free workshop",
-    "path": "/clearcircuit"
-},
-{
+    "path": "/toolbox"
+}, {
     "name": "Resources",
-    "path": "/clearall"
-},
-{
-    "name": "Quizzes",
-    "path": "/undo"
-}
-]
+    "path": "/resources"
+}]

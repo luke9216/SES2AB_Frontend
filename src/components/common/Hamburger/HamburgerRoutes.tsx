@@ -1,6 +1,7 @@
 import React, { ComponentType, FunctionComponent } from "react";
 import { Route, RouteProps } from "react-router-dom";
-import Hamburger from "./Hamburger";
+import Hamburger, { IhamburgerTypes } from "./Hamburger";
+import drawerDetails from "../__data__/data.drawerDetails.json";
 
 type HamburgerRoutesProps = RouteProps & {
   screen: ComponentType;
@@ -13,7 +14,7 @@ export const HamburgerRoutes: FunctionComponent<HamburgerRoutesProps> = ({
   <Route
     {...route}
     render={() => (
-      <Hamburger>
+      <Hamburger drawerDetails={drawerDetails as Array<IhamburgerTypes>}>
         <Screen />
       </Hamburger>
     )}

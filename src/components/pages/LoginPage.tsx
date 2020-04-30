@@ -30,7 +30,7 @@ const LoginPage: React.SFC<LoginPageProps> = (props) => {
     const onLogginBtnClicked = () => (event: any) => {
         if (userDetailsState.email.toLowerCase() === "test@test.com" && userDetailsState.password.toLowerCase() === "12345") {
             console.log("Login Successful")
-            window.location.href = 'http://localhost:3000/';
+            window.location.href = 'http://localhost:3000/home';
         } else {
             console.log("Login Failed")
         }

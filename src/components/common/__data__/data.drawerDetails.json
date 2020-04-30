@@ -6,7 +6,7 @@
     "path": "/DiscussionBoard"
 }, {
     "name": "Free workshop",
-    "path": "/toolbox"
+    "path": "/workshop"
 }, {
     "name": "Resources",
     "path": "/resources"

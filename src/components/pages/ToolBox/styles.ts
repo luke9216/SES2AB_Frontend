@@ -5,8 +5,7 @@ export const paperStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   circuit: {
-    background: "white",
-    alignItems: "center",
+    background: "grey",
     marginRight: "40px",
     width: "500px",
     padding: "3em",

@@ -13,11 +13,6 @@ export interface ToolBoxProps {
   props?: any;
 }
 
-const state = {
-  toolBox: [],
-  circuits: [],
-};
-
 const onDragStart = (event: any, id: any) => {
   console.log("drag start", id);
   event.dataTransfer.setData("id", id);
@@ -31,15 +26,16 @@ const onDragOver = (event: any) => {
 const onDrop = (event: any, cat: any) => {
   let id = event.dataTransfer.getData("id");
 
-  let gates = gateTypes.map((tab: GateButtonTab) => {
+  /* 
     if (tab.name == id) {
       // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       tab.category == cat;
     }
-    return tab;
-  });
+    return tab;*/
 
-  console.log("Circuit:", gates);
+  /*let gates = gateTypes.map((tab: GateButtonTab) => {});
+
+  console.log("Circuit:", gates); */
   console.log("Gate Name:", id);
 };
 
@@ -55,16 +51,24 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
       <h1 className={classes.title1}>ToolBox</h1>
       <div>
         <Grid container direction="row" spacing={5} className={classes.divTop}>
-          <GateTypes gateTypes={gateTypes as Array<GateButtonTab>} />;
+          <GateTypes
+            gateTypes={gateTypes as Array<GateButtonTab>}
+            handleDragStart={onDragStart}
+          />
+          ;
         </Grid>
-
         <h1 className={classes.title1}>Circuit</h1>
         <Grid
           container
           direction="row"
           spacing={5}
           className={classes.CircuitBoxFrame}
-        ></Grid>
+        >
+          <div
+            onDragOver={(e) => onDragOver(e)}
+            onDrop={(e) => onDrop(e, "circuits")}
+          ></div>
+        </Grid>
       </div>
     </div>
   );

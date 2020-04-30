@@ -4,28 +4,29 @@ export const paperStyles = makeStyles((theme) => ({
   root: {
     color: theme.palette.text.secondary,
   },
-  text1: {
-    color: "blue",
-  },
-
-  text2: {
-    color: "red",
+  circuit: {
+    background: "white",
+    alignItems: "center",
+    marginRight: "40px",
+    width: "500px",
+    padding: "3em",
   },
 
   toolBoxFrame: {
     marginLeft: "50px",
     marginRight: "50px",
-  },
-  divBottom: {
-    bottom: 10,
-    position: "absolute",
-    marginBottom: "50px",
-    marginLeft: "20px",
+    border: "solid",
   },
   divTop: {
     top: 10,
     position: "absolute",
     marginTop: "20px",
     marginLeft: "40px",
+    marginRight: "50px",
+  },
+  frame: {
+    background: "grey",
+    border: "solid",
+    marginRight: "40px",
   },
 }));

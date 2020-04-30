@@ -15,7 +15,7 @@ const GateTypes: React.SFC<GateTypesProps> = ({ gateTypes }) => {
     <React.Fragment>
       {gateTypes.map((tab: GateButtonTab, i) => (
         <Grid key={i} item direction="row">
-          <h1>{tab.name}</h1>
+          <h2>{tab.name}</h2>
           <Grid container spacing={2}>
             {tab.gates.map((gate, j) => (
               <Tooltip title={tab.description}>

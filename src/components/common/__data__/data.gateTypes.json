@@ -1,44 +1,44 @@
 [{
         "name": "Probes",
-        "gates": [" P ", " ZP "],
+        "gates": [" 1 ", " 2 ", "3"],
         "description": "Description for Probes"
     },
     {
         "name": "Half Turns",
-        "gates": ["gate c", "gate d"],
+        "gates": ["Z", "Y", "Swap", "H"],
         "description": "Description for Half Turns"
 
 
     }, {
         "name": "Quarter Turns",
-        "gates": ["gate e", "gate f"],
+        "gates": ["S", "Y", "X"],
         "description": "Description for Quarter Turns"
     }, {
         "name": "Spinning",
-        "gates": ["gate g", "gate f"],
+        "gates": ["Z", "Y", "X"],
         "description": "Description for Spinning"
 
     },
     {
         "name": "Formulaic",
-        "gates": ["gate h", "gate i"],
+        "gates": ["Z", "Y", "X"],
         "description": "Description for Formulaic"
     },
     {
         "name": "Parametrized",
-        "gates": ["gate j", "gate k"],
+        "gates": ["Z", "Y", "X"],
         "description": "Description for Parametrized"
 
     },
     {
         "name": "Sampling",
-        "gates": ["gate l", "gate m"],
+        "gates": ["Z", "Y", "X"],
         "description": "Description for Sampling"
 
     },
     {
         "name": "Parity",
-        "gates": ["gate1", "gate2"],
+        "gates": ["Z", "Y", "Z"],
         "description": "Description for Parity"
     }
 

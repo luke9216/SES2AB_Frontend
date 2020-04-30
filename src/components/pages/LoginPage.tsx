@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useHistory } from 'react-router-dom';
-import LoginForm from './../containers/LoginForm';
+import LoginForm from './../containers/Login/LoginForm';
 
 export interface LoginPageProps {
     props?: any

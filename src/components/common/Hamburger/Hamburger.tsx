@@ -1,6 +1,11 @@
-import * as React from "react";
+import React from "react";
 import clsx from "clsx";
-import { hamburgerStyles } from "./style";
+import {
+  createStyles,
+  makeStyles,
+  useTheme,
+  Theme,
+} from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -8,19 +13,19 @@ import List from "@material-ui/core/List";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
+import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import IconButton from "@material-ui/core/IconButton";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import { hamburgerStyles } from "./style";
 import AssignmentIcon from "@material-ui/icons/Assignment";
+import { Button } from "@material-ui/core";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import WorkIcon from "@material-ui/icons/Work";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
-import { useTheme } from "@material-ui/core/styles";
-import { Button } from "@material-ui/core";
 
 export interface HamburgerProps {
   props?: any;
@@ -33,6 +38,8 @@ export interface IhamburgerTypes {
 }
 
 const Hamburger: React.SFC<HamburgerProps> = ({ children, drawerDetails }) => {
+  const classes = hamburgerStyles();
+  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -42,10 +49,6 @@ const Hamburger: React.SFC<HamburgerProps> = ({ children, drawerDetails }) => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
-  const classes = hamburgerStyles();
-  const theme = useTheme();
-
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -67,9 +70,11 @@ const Hamburger: React.SFC<HamburgerProps> = ({ children, drawerDetails }) => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            Your Navigation
-          </Typography>
+          <Button href="/home">
+            <Typography className={classes.home} variant="h6" noWrap>
+              Quantum Computing
+            </Typography>
+          </Button>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -90,8 +95,8 @@ const Hamburger: React.SFC<HamburgerProps> = ({ children, drawerDetails }) => {
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />
             ) : (
-              <ChevronLeftIcon />
-            )}
+                <ChevronLeftIcon />
+              )}
           </IconButton>
         </div>
         <Divider />
@@ -107,8 +112,8 @@ const Hamburger: React.SFC<HamburgerProps> = ({ children, drawerDetails }) => {
                   ) : <AssignmentIcon /> && key % 4 === 2 ? (
                     <WorkIcon />
                   ) : (
-                    <VideoLibraryIcon />
-                  )}
+                          <VideoLibraryIcon />
+                        )}
                 </ListItemIcon>
                 <ListItemText primary={tab.name} />
               </Button>
@@ -122,7 +127,7 @@ const Hamburger: React.SFC<HamburgerProps> = ({ children, drawerDetails }) => {
         <div className={classes.toolbar} />
         {children}
       </main>
-    </div>
+    </div >
   );
 };
 

@@ -11,13 +11,13 @@ export const HamburgerRoutes: FunctionComponent<HamburgerRoutesProps> = ({
   screen: Screen,
   ...route
 }) => (
-  <Route
-    {...route}
-    render={() => (
-      <Hamburger drawerDetails={drawerDetails as Array<IhamburgerTypes>}>
-        <Screen />
-      </Hamburger>
-    )}
-  />
-);
+    <Route
+      {...route}
+      render={() => (
+        <Hamburger drawerDetails={drawerDetails as Array<IhamburgerTypes>}>
+          <Screen />
+        </Hamburger>
+      )}
+    />
+  );
 export default HamburgerRoutes;

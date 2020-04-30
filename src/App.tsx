@@ -1,13 +1,11 @@
-import React from 'react';
-import Routing from './components/pages/Routing'
-import './App.css';
+import React from "react";
+import Routing from "./components/pages/Routing";
+import "./App.css";
 
-export interface AppProps { }
+export interface AppProps {}
 
 const App: React.SFC<AppProps> = () => {
-  return (
-    <Routing />
-  );
-}
+  return <Routing />;
+};
 
 export default App;

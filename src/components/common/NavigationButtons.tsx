@@ -9,7 +9,6 @@ interface NavigationButtonsProps {
 
 export interface NavigationButtonsTab {
   name: string;
-  path: string;
 }
 
 const NavigationButtons: React.SFC<NavigationButtonsProps> = ({
@@ -17,10 +16,6 @@ const NavigationButtons: React.SFC<NavigationButtonsProps> = ({
   children,
 }) => {
   const classes = navigationButtonsStyles();
-  // const [tabValue, setTabValue] = React.useState(0);
-  // onClick={() => setTabValue(index)}
-  // component={Link}
-  // to={`${path}${tab.path}`}
 
   return (
     <div>

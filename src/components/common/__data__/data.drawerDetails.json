@@ -1,9 +1,9 @@
 [{
     "name": "Assignments",
-    "path": "/assignment"
+    "path": "/Assignments"
 }, {
     "name": "Discussion",
-    "path": "/discussion"
+    "path": "/DiscussionBoard"
 }, {
     "name": "Free workshop",
     "path": "/toolbox"

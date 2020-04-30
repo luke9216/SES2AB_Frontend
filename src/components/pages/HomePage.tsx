@@ -15,10 +15,8 @@ export interface HomePageProps {
 
 const HomePage: React.SFC<HomePageProps> = ({ props }) => {
   const classes = logoStyles();
-  const { path } = props.match;
   return (
     <NavigationButtons
-      path={path}
       navigationTabs={navigationTabs as Array<NavigationButtonsTab>}
     >
       <img src={logo} className={classes.logo} alt="UTS Logo" />

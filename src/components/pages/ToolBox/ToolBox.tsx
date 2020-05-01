@@ -28,7 +28,7 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     event.preventDefault();
   };
   
-  const onDrop = (event: any, cat: any) => {
+  const onDrop = (event: any) => {
     let id = event.dataTransfer.getData("id");
 
     setCircuit({
@@ -52,20 +52,13 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
           ;
         </Grid>
         <h1 className={classes.title1}>Circuit</h1>
-        <Grid
-          container
-          direction="row"
-          spacing={5}
-          className={classes.CircuitBoxFrame}
-        >
           <div
             onDragOver={(e) => onDragOver(e)}
-            onDrop={(e) => onDrop(e, "circuits")}
+            onDrop={(e) => onDrop(e)}
             className={classes.circuit}
           >
             CircuitBoards: {circuitState.circuit}
           </div>
-        </Grid>
       </div>
     </div>
   );

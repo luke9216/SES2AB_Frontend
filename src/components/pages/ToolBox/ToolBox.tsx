@@ -27,9 +27,9 @@ const onDrop = (event: any, cat: any) => {
   let id = event.dataTransfer.getData("id");
 
   let gates = gateTypes.map((tab: GateButtonTab) => {
-    if (tab.name == id) {
+    if (tab.name === id) {
       // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-      tab.category == cat;
+      tab.category === cat;
     }
     return tab;
   });
@@ -52,6 +52,7 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
           handleDragStart={onDragStart}
           gateTypes={gateTypes as Array<GateButtonTab>}
         />
+        
         <Grid container className={classes.frame}>
           <div
             className={classes.circuit}

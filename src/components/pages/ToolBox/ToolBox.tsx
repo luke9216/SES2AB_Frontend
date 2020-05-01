@@ -16,8 +16,6 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
   const [circuitState, setCircuit] = React.useState({
       circuit: []
   });
-  
-  
 
   const onDragStart = (event: any, id: any) => {
     console.log("drag start", id);
@@ -57,7 +55,7 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
             onDrop={(e) => onDrop(e)}
             className={classes.circuit}
           >
-            CircuitBoards: {circuitState.circuit}
+            CircuitBoards: {circuitState.circuit} 
           </div>
       </div>
     </div>

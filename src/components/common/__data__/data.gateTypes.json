@@ -28,14 +28,14 @@
     },
     {
         "name": "Formulaic",
-        "gates": ["gate h", "gate i"],
+        "gates": [" gate h ", " gate i "],
         "description": "Description for Formulaic",
         "category": ""
 
     },
     {
         "name": "Parametrized",
-        "gates": ["gate j", "gate k"],
+        "gates": [" gate j ", " gate k "],
         "description": "Description for Parametrized",
         "category": ""
 

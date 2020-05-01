@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Grid } from "@material-ui/core";
 import GateTypes, { GateButtonTab } from "./GateTypes";
-import { paperStyles } from "./styles";
+import { paperStyles } from "./harryStyles";
 import gateTypes from "../../common/__data__/data.gateTypes.json";
 
 export interface ToolBoxProps {
@@ -33,7 +33,7 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
 
     setCircuit({
       ...circuitState,
-      circuit: id
+      circuit: circuitState.circuit.concat(id)
   })
 
     console.log("gate", id)

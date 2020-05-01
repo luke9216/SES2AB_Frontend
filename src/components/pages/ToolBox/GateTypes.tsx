@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Grid, Button, Tabs, Tooltip } from "@material-ui/core";
+import { Grid, Button, Tooltip } from "@material-ui/core";
 
 interface GateTypesProps {
   gateTypes: Array<GateButtonTab>;

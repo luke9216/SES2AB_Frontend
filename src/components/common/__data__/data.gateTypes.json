@@ -6,7 +6,7 @@
     },
     {
         "name": "Half Turns",
-        "gates": ["gate c", "gate d"],
+        "gates": [" gate c ", "gate d"],
         "description": "Description for Half Turns",
         "category": ""
 
@@ -14,13 +14,13 @@
 
     }, {
         "name": "Quarter Turns",
-        "gates": ["gate e", "gate f"],
+        "gates": [" gate e ", " gate f "],
         "description": "Description for Quarter Turns",
         "category": ""
 
     }, {
         "name": "Spinning",
-        "gates": ["gate g", "gate f"],
+        "gates": [" gate g ", " gate f "],
         "description": "Description for Spinning",
         "category": ""
 
@@ -43,7 +43,7 @@
     },
     {
         "name": "Sampling",
-        "gates": ["gate l", "gate m"],
+        "gates": [" gate l ", " gate m "],
         "description": "Description for Sampling",
         "category": ""
 
@@ -51,7 +51,7 @@
     },
     {
         "name": "Parity",
-        "gates": ["gate1", "gate2"],
+        "gates": [" gate1 ", " gate2 "],
         "description": "Description for Parity",
         "category": ""
 

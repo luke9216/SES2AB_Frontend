@@ -3,6 +3,7 @@ import { Grid, Divider } from "@material-ui/core";
 import GateTypes, { GateButtonTab } from "./GateTypes";
 import { paperStyles } from "./styles";
 import gateTypes from "../../common/__data__/data.gateTypes.json";
+import Canvas from './Canvas';
 
 export interface ToolBoxProps {
   props?: any;
@@ -43,6 +44,7 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     default: [],
     using: [],
   };
+  
 
   const classes = paperStyles();
   return (
@@ -52,6 +54,9 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
           handleDragStart={onDragStart}
           gateTypes={gateTypes as Array<GateButtonTab>}
         />
+      <Grid container direction="column">
+      <Canvas/>
+      </Grid>
         
         <Grid container className={classes.frame}>
           <div
@@ -62,9 +67,11 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
             {circuitBoard.using}
           </div>
         </Grid>
+        
       </Grid>
     </React.Fragment>
   );
+  
 };
 
 export default ToolBox;

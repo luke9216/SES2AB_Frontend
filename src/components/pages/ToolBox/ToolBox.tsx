@@ -13,6 +13,14 @@ export interface ToolBoxProps {
   props?: any;
 }
 
+/* 
+    if (tab.name == id) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+      tab.category == cat;
+    }
+    return tab;
+*/
+
 const onDragStart = (event: any, id: any) => {
   console.log("drag start", id);
   event.dataTransfer.setData("id", id);
@@ -23,28 +31,35 @@ const onDragOver = (event: any) => {
   console.log("drag over");
 };
 
+export interface ICircuitBoard {
+  using: Array<String>;
+}
+
+const circuitBoard = {
+  using: [],
+} as ICircuitBoard;
+
 const onDrop = (event: any, cat: any) => {
   let id = event.dataTransfer.getData("id");
 
-  /* 
-    if (tab.name == id) {
-      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-      tab.category == cat;
-    }
-    return tab;*/
+  gateTypes.map((tab: GateButtonTab) => {
+    let gates = tab.gates.filter((gate) => {
+      if (gate == id) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        gate === cat;
+      }
+      return gate;
+    });
+    circuitBoard.using = gates;
+    console.log("circuit board:", circuitBoard.using);
+  });
 
-  /*let gates = gateTypes.map((tab: GateButtonTab) => {});
-
-  console.log("Circuit:", gates); */
-  console.log("Gate Name:", id);
+  //console.log("Circuit:", name);
+  //console.log("Gate Name:", id);
+  //console.log("Array:", circuitBoard.using);
 };
 
 const ToolBox: React.SFC<ToolBoxProps> = () => {
-  var circuitBoard = {
-    default: [],
-    using: [],
-  };
-
   const classes = paperStyles();
   return (
     <div>
@@ -67,7 +82,10 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
           <div
             onDragOver={(e) => onDragOver(e)}
             onDrop={(e) => onDrop(e, "circuits")}
-          ></div>
+            className={classes.circuit}
+          >
+            CircuitBoards; {circuitBoard.using}
+          </div>
         </Grid>
       </div>
     </div>

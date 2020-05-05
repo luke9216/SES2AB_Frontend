@@ -1,11 +1,23 @@
+<-------------------------------SUMMARY ---------------------->
+we will forget about the multiple circuit functionality of the website. We will focus instead
+on a single linear circuit. For output we will use basic algebra instead of that computation stuff
+
 <---------------------------------TODO------------------------------------------->
-    - Undo method - need to undo the LAST action of the user, not the last value in the array
-    - Delete method - need to delete an individual gate instead of gates with the same id 
-    - Redo method
-    - Rearrangment of gates
-    - an output of the circuit (we'll have each gate use basic algorithm. e.g. 1+1)
+    - Undo method - need to undo the LAST action of the user, not the last value in the array - DAVID
+    - Delete method - need to delete an individual gate instead of gates with the same id - KEN
+    - Redo method - Goes back the latest state recorded 
+    - Rearrangment of gates - Move gates in the circuit - KEN
+    - an output of the circuit (we'll have each gate use basic algorithm. e.g. 1+1) - need to talk to mitchel
+
+<------------------------------BACKEND TODO ----------------------------------->
+
+    - Save/store our work - We need a proper database for our users 
 
 <------------------------COMPLETED------------------------------------------------->
+
     - Clear method 
+
 <------------------------------YEAH NAH------------------------------------------>
     - New circuit method - to be done later 
+    - Interconnected gates (Gates that work with the other circuits)
+    - Make gate, store our custom gates

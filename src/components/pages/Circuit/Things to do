@@ -1,0 +1,11 @@
+<---------------------------------TODO------------------------------------------->
+    - Undo method - need to undo the LAST action of the user, not the last value in the array
+    - Delete method - need to delete an individual gate instead of gates with the same id 
+    - Redo method
+    - Rearrangment of gates
+    - an output of the circuit (we'll have each gate use basic algorithm. e.g. 1+1)
+
+<------------------------COMPLETED------------------------------------------------->
+    - Clear method 
+<------------------------------YEAH NAH------------------------------------------>
+    - New circuit method - to be done later 

@@ -1,8 +1,9 @@
 import * as React from "react";
 import { Grid, Button } from "@material-ui/core";
-import GateTypes, { GateButtonTab } from "./GateTypes";
+import GateTypes, { GateButtonTab } from "./Gates";
 import { paperStyles } from "./harryStyles";
 import gateTypes from "../../common/__data__/data.gateTypes.json";
+import CircuitBoard from "./CircuitBoard";
 
 export interface ToolBoxProps {
   props?: any;
@@ -10,12 +11,15 @@ export interface ToolBoxProps {
 
 export interface ICircuitBoard {
   circuit: Array<string>;
+  history: Array<string>;
 }
 
 const ToolBox: React.SFC<ToolBoxProps> = () => {
+  // This is the list of gates used in the circuit //
   const [circuitState, setCircuit] = React.useState({
     circuit: [""],
   } as ICircuitBoard);
+  // -------------------------------------------------//
 
   const onDragStart = (event: any, id: any) => {
     console.log("drag start", id);
@@ -45,6 +49,30 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     });
   };
 
+  const onClear = (event: any) => {
+    // const items = [];
+    setCircuit({
+      ...circuitState,
+      circuit: [],
+      history: [],
+    });
+  };
+
+  const onUndo = (event: any) => {
+    const items = circuitState.circuit.splice(
+      0,
+      circuitState.circuit.length - 1
+    );
+    setCircuit({
+      ...circuitState,
+      circuit: items,
+    });
+  };
+
+  const onRedo = (event: any) => {
+    console.log("I am redoing my work");
+  };
+
   const classes = paperStyles();
   return (
     <div>
@@ -55,7 +83,13 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
             gateTypes={gateTypes as Array<GateButtonTab>}
             handleDragStart={onDragStart}
           />
-          ;
+        </Grid>
+        <Grid>
+          <Button onClick={(e) => onClear(e)}>Clear all</Button>
+          <Button onClick={(e) => onUndo(e)}>Undo</Button>
+          <Button disabled onClick={(e) => onRedo(e)}>
+            Redo
+          </Button>
         </Grid>
         <h1 className={classes.title1}>Circuit</h1>
         <div
@@ -63,10 +97,9 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
           onDrop={(e) => onDrop(e)}
           className={classes.circuit}
         >
-          {circuitState.circuit.map((item) => (
-            <Button onClick={(event) => onDelete(event, item)}>{item}</Button>
-          ))}
+          <CircuitBoard handleDelete={onDelete} gates={circuitState.circuit} />
         </div>
+        <div>DROP HERE</div>
       </div>
     </div>
   );

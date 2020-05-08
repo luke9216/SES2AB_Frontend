@@ -31,8 +31,6 @@ const Resources: React.SFC<ResourcesProps> = () => {
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
-        </Grid>
-        <Grid>
           <ExpansionPanel>
             <ExpansionPanelSummary
               expandIcon={<ExpandMoreIcon />}
@@ -47,8 +45,6 @@ const Resources: React.SFC<ResourcesProps> = () => {
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
-        </Grid>
-        <Grid>
           <ExpansionPanel>
             <ExpansionPanelSummary
               expandIcon={<ExpandMoreIcon />}

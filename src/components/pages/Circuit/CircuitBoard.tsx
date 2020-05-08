@@ -13,7 +13,9 @@ const CircuitBoard: React.SFC<CircuitBoardProps> = ({
   return (
     <div>
       {gates.map((item) => (
-        <Button onClick={(event) => handleDelete(event, item)}>{item}</Button>
+        <Button onClick={(event) => handleDelete(event, item.indexOf(item))}>
+          {item}
+        </Button>
       ))}
     </div>
   );

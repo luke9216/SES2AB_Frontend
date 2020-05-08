@@ -42,11 +42,16 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
   };
 
   const onDelete = (event: any, id: string) => {
-    const items = circuitState.circuit.filter((gate: string) => gate !== id);
+    const index = circuitState.circuit.indexOf(id);
+    console.log(index);
+    /*  const items = circuitState.circuit;
+    if (index > -1) {
+      items.splice(index, 1);
+    }
     setCircuit({
       ...circuitState,
       circuit: items,
-    });
+    }); */
   };
 
   const onClear = (event: any) => {

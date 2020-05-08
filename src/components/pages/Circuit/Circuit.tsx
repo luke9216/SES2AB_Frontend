@@ -11,18 +11,19 @@ export interface ToolBoxProps {
 
 export interface ICircuitBoard {
   circuit: Array<string>;
-  history: Array<string>;
+  circuitGate: string;
 }
 
 const ToolBox: React.SFC<ToolBoxProps> = () => {
   // This is the list of gates used in the circuit //
   const [circuitState, setCircuit] = React.useState({
     circuit: [""],
+    circuitGate: "",
   } as ICircuitBoard);
   // -------------------------------------------------//
 
   const onDragStart = (event: any, id: any) => {
-    console.log("drag start", id);
+    console.log("Dragging gate from toolbox", id);
     event.dataTransfer.setData("id", id);
   };
 
@@ -30,28 +31,39 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     event.preventDefault();
   };
 
-  const onDrop = (event: any) => {
+  const onDragDrop = (event: any) => {
     let id = event.dataTransfer.getData("id");
-
     setCircuit({
       ...circuitState,
-      circuit: circuitState.circuit.concat(id),
+      circuit: circuitState.circuit.concat(id).filter(Boolean),
     });
-    console.log(circuitState.circuit);
+    console.log("Added gate to circuit:", id);
   };
 
   const onDragGateStart = (event: any, id: string) => {
-    const draggedItem = circuitState.circuit.indexOf(id);
-    console.log("on drag gate", id);
-    event.dataTransfer.effectAllowed = "move";
-    event.dataTransfer.setData("gate", id);
+    setCircuit({
+      ...circuitState,
+      circuitGate: id,
+    });
+    console.log("Dragging circuit gates", id);
     // event.dataTransfer.setDragImage(event.target.parentNode, 20, 20);
-    return draggedItem;
   };
   const onDragGateOver = (event: any, id: string) => {
-    const draggedOverItem = circuitState.circuit.indexOf(id);
-    let gate = event.dataTransfer.getData("gate");
-    console.log("ON OVER", gate);
+    const index = circuitState.circuit.indexOf(id);
+    const draggedOverGate = id;
+    if (circuitState.circuitGate === draggedOverGate) {
+      return;
+    }
+
+    const items = circuitState.circuit.filter(
+      (item) => item !== circuitState.circuitGate
+    );
+    items.splice(index, 0, circuitState.circuitGate);
+
+    setCircuit({
+      ...circuitState,
+      circuit: items,
+    });
   };
 
   const onDragGateEnd = (event: any) => {
@@ -77,23 +89,7 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     setCircuit({
       ...circuitState,
       circuit: [],
-      history: [],
     });
-  };
-
-  const onUndo = (event: any) => {
-    const items = circuitState.circuit.splice(
-      0,
-      circuitState.circuit.length - 1
-    );
-    setCircuit({
-      ...circuitState,
-      circuit: items,
-    });
-  };
-
-  const onRedo = (event: any) => {
-    console.log("I am redoing my work");
   };
 
   const classes = paperStyles();
@@ -108,16 +104,14 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
           />
         </Grid>
         <Grid>
-          <Button onClick={(e) => onClear(e)}>Clear all</Button>
-          <Button onClick={(e) => onUndo(e)}>Undo</Button>
-          <Button disabled onClick={(e) => onRedo(e)}>
-            Redo
-          </Button>
+          <Button onClick={onClear}>Clear all</Button>
+          <Button>Undo</Button>
+          <Button disabled>Redo</Button>
         </Grid>
         <h1 className={classes.title1}>Circuit</h1>
         <div
           onDragOver={(e) => onDragOver(e)}
-          onDrop={(e) => onDrop(e)}
+          onDrop={(e) => onDragDrop(e)}
           className={classes.circuit}
         >
           <CircuitBoard

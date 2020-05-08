@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Grid, Button } from "@material-ui/core";
-
+import { paperStyles } from "./harryStyles";
 export interface CircuitBoardProps {
   gates: Array<string>;
   handleDrag: Function;
@@ -16,21 +16,21 @@ const CircuitBoard: React.SFC<CircuitBoardProps> = ({
   handleDragStart,
   handleDragEnd,
 }) => {
+  const classes = paperStyles();
   return (
-    <Grid container direction="row">
-      {gates.map((item) => (
-        <li key={item} onDragOver={(e) => handleDrag(e, item)}>
-          <div
-            className="drag"
-            draggable
-            onDragStart={(e) => handleDragStart(e, item)}
-            onDragEnd={(e) => handleDragStart(e)}
-          >
+    <Grid container direction="row" className={classes.circuitGates}>
+      {gates.map((item, j) => (
+        <div
+          draggable
+          onDragOver={(e) => handleDrag(e, item)}
+          onDragStart={(e) => handleDragStart(e, item)}
+        >
+          <Grid spacing={4}>
             <Button onClick={(event) => handleDelete(event, item)}>
               {item}
             </Button>
-          </div>
-        </li>
+          </Grid>
+        </div>
       ))}
     </Grid>
   );

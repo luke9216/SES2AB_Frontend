@@ -37,13 +37,31 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
       ...circuitState,
       circuit: circuitState.circuit.concat(id),
     });
+    console.log(circuitState.circuit);
+  };
 
-    console.log("gate", id);
+  const onDragGateStart = (event: any, id: string) => {
+    const draggedItem = circuitState.circuit.indexOf(id);
+    console.log("on drag gate", id);
+    event.dataTransfer.effectAllowed = "move";
+    event.dataTransfer.setData("gate", id);
+    // event.dataTransfer.setDragImage(event.target.parentNode, 20, 20);
+    return draggedItem;
+  };
+  const onDragGateOver = (event: any, id: string) => {
+    const draggedOverItem = circuitState.circuit.indexOf(id);
+    let gate = event.dataTransfer.getData("gate");
+    console.log("ON OVER", gate);
+  };
+
+  const onDragGateEnd = (event: any) => {
+    event.preventDefault();
   };
 
   const onDelete = (event: any, id: string) => {
     const index = circuitState.circuit.indexOf(id);
     console.log(index);
+    console.log(id);
     /*  const items = circuitState.circuit;
     if (index > -1) {
       items.splice(index, 1);
@@ -102,7 +120,13 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
           onDrop={(e) => onDrop(e)}
           className={classes.circuit}
         >
-          <CircuitBoard handleDelete={onDelete} gates={circuitState.circuit} />
+          <CircuitBoard
+            handleDelete={onDelete}
+            handleDrag={onDragGateOver}
+            handleDragStart={onDragGateStart}
+            handleDragEnd={onDragGateEnd}
+            gates={circuitState.circuit}
+          />
         </div>
         <div>DROP HERE</div>
       </div>

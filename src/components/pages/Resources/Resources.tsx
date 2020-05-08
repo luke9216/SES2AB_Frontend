@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Button } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { resourcesStyles } from "./style";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
@@ -152,7 +152,6 @@ const Resources: React.SFC<ResourcesProps> = () => {
             </ExpansionPanelDetails>
             </ExpansionPanel>
           </Grid>
-          /** CHANGE TO MAP LATER */
 
       </div>
     </div>

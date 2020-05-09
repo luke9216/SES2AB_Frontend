@@ -10,17 +10,15 @@ export interface ToolBoxProps {
 }
 
 export interface ICircuitBoard {
-  circuit: Array<string>;
-  circuitGate: string;
+  circuit: Array<any>;
+  circuitGate: number;
 }
 
 const ToolBox: React.SFC<ToolBoxProps> = () => {
-  // This is the list of gates used in the circuit //
   const [circuitState, setCircuit] = React.useState({
     circuit: [""],
-    circuitGate: "",
+    circuitGate: 0,
   } as ICircuitBoard);
-  // -------------------------------------------------//
 
   const onDragStart = (event: any, id: any) => {
     console.log("Dragging gate from toolbox", id);
@@ -40,25 +38,28 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     console.log("Added gate to circuit:", id);
   };
 
-  const onDragGateStart = (event: any, id: string) => {
+  const onDragGateStart = (event: any, index: number) => {
+    const gate = circuitState.circuit[index];
+    console.log("rearranging this index:", index);
+    console.log("rearranging this gate:", gate);
     setCircuit({
       ...circuitState,
-      circuitGate: id,
+      circuitGate: index,
     });
 
-    console.log("Dragging circuit gates", id);
+    console.log("Dragging circuit gates", index);
   };
-  const onDragGateOver = (event: any, id: string) => {
-    const index = circuitState.circuit.indexOf(id);
-    const draggedOverGate = id;
-    if (circuitState.circuitGate === draggedOverGate) {
+
+  const onDragGateOver = (event: any, index: number) => {
+    const dragGate = circuitState.circuit[circuitState.circuitGate];
+    const draggedOverGate = circuitState.circuit[index];
+    if (dragGate === draggedOverGate) {
       return;
     }
 
-    const items = circuitState.circuit.filter(
-      (item) => item !== circuitState.circuitGate
-    );
-    items.splice(index, 0, circuitState.circuitGate);
+    const items = circuitState.circuit;
+    items.splice(circuitState.circuitGate, 1);
+    items.splice(index, 0, dragGate);
 
     setCircuit({
       ...circuitState,
@@ -82,7 +83,6 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
   };
 
   const onClear = (event: any) => {
-    // const items = [];
     setCircuit({
       ...circuitState,
       circuit: [],
@@ -119,7 +119,6 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
             gates={circuitState.circuit}
           />
         </div>
-        <div>DROP HERE</div>
       </div>
     </div>
   );

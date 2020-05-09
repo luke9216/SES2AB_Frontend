@@ -23,8 +23,9 @@ const CircuitBoard: React.SFC<CircuitBoardProps> = ({
         <div
           key={j}
           draggable
-          onDragOver={(e) => handleDrag(e, item, j)}
-          onDragStart={(e) => handleDragStart(e, item, j)}
+          onDragOver={(e) => handleDrag(e, j)}
+          onDragStart={(e) => handleDragStart(e, j)}
+          onDragEnd={(e) => handleDragEnd(e)}
         >
           <Grid spacing={4}>
             <Button key={j} onClick={(event) => handleDelete(event, j)}>

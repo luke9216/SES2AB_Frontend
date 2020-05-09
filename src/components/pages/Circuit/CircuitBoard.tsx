@@ -21,12 +21,13 @@ const CircuitBoard: React.SFC<CircuitBoardProps> = ({
     <Grid container direction="row" className={classes.circuitGates}>
       {gates.map((item, j) => (
         <div
+          key={j}
           draggable
-          onDragOver={(e) => handleDrag(e, item)}
-          onDragStart={(e) => handleDragStart(e, item)}
+          onDragOver={(e) => handleDrag(e, item, j)}
+          onDragStart={(e) => handleDragStart(e, item, j)}
         >
           <Grid spacing={4}>
-            <Button onClick={(event) => handleDelete(event, item)}>
+            <Button key={j} onClick={(event) => handleDelete(event, j)}>
               {item}
             </Button>
           </Grid>

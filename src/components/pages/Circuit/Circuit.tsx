@@ -45,8 +45,8 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
       ...circuitState,
       circuitGate: id,
     });
+
     console.log("Dragging circuit gates", id);
-    // event.dataTransfer.setDragImage(event.target.parentNode, 20, 20);
   };
   const onDragGateOver = (event: any, id: string) => {
     const index = circuitState.circuit.indexOf(id);
@@ -70,18 +70,15 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     event.preventDefault();
   };
 
-  const onDelete = (event: any, id: string) => {
-    const index = circuitState.circuit.indexOf(id);
-    console.log(index);
-    console.log(id);
-    /*  const items = circuitState.circuit;
+  const onDelete = (event: any, index: number) => {
+    const items = circuitState.circuit;
     if (index > -1) {
       items.splice(index, 1);
     }
     setCircuit({
       ...circuitState,
       circuit: items,
-    }); */
+    });
   };
 
   const onClear = (event: any) => {

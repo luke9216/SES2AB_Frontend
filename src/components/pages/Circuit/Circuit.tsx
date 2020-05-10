@@ -73,13 +73,17 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
 
   const onDelete = (event: any, index: number) => {
     const items = circuitState.circuit;
-    if (index > -1) {
-      items.splice(index, 1);
+    if (event.ctrlKey) {
+      if (index > -1) {
+        items.splice(index, 1);
+      }
+      setCircuit({
+        ...circuitState,
+        circuit: items,
+      });
+    } else {
+      return;
     }
-    setCircuit({
-      ...circuitState,
-      circuit: items,
-    });
   };
 
   const onClear = (event: any) => {

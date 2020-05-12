@@ -64,6 +64,7 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     setCircuit({
       ...circuitState,
       circuit: items,
+      circuitGate: index,
     });
   };
 

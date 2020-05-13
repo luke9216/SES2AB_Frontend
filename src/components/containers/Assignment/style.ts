@@ -26,4 +26,23 @@ export const assignmentStyles = makeStyles((theme) => ({
         justifyContent: "center",
         display: "flex",
     },
+
+    toolbox: {
+        background: "rgb(176,176,176)",
+        border: 0,
+        borderRadius: 3,
+        boxShadow: "0 3px 5px 2px rgba(140, 158, 255, .3)",
+        color: "white",
+        height: 48,
+        padding: "0 30px",
+        justifyContent: "left",
+        display: "flex",
+    },
+
+    iconstyle: {
+        color: "white",
+        marginTop: "auto",
+        marginBottom: "auto",
+    },
+
 }));

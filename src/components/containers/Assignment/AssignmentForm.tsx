@@ -1,14 +1,28 @@
 import * as React from "react";
-import { Grid, Divider, Button } from "@material-ui/core";
+import clsx from "clsx";
+import {
+  createStyles,
+  makeStyles,
+  useTheme,
+  Theme,
+} from "@material-ui/core/styles";
+import { Grid, List, Divider, Button } from "@material-ui/core";
 import { assignmentStyles } from "./style";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import AddBoxIcon from '@material-ui/icons/AddBox';
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import DashboardIcon from "@material-ui/icons/Dashboard";
 
 export interface AssignmentFormProps {
+  props?: any;
   assignments: Array<IAssignmentTypes>;
+  drawerAssignmentDetails: Array<IAssignmentTools>;
 }
 
 export interface IAssignmentTypes {
@@ -17,13 +31,34 @@ export interface IAssignmentTypes {
 }
 
 
-const AssignmentForm: React.SFC<AssignmentFormProps> = () => {
+export interface IAssignmentTools {
+  name: string;
+  path: string;
+}
+
+
+const AssignmentForm: React.SFC<AssignmentFormProps> = ({assignments, children,  drawerAssignmentDetails }) => {
   const classes = assignmentStyles();
+  const theme = useTheme();
 
   return (
     <div>
       <h1 className={classes.title1}>Assignments</h1>
       <div>
+
+      <Grid className={classes.toolbox}>
+      <List>
+          <ListItem button >
+            <Button >
+              <ListItemIcon>
+               <AddBoxIcon fontSize="large" className={classes.iconstyle} />
+              </ListItemIcon>
+              <ListItemText  />
+            </Button>
+          </ListItem>
+      </List>
+    </Grid>
+
         <Grid>
           <ExpansionPanel>
             <ExpansionPanelSummary

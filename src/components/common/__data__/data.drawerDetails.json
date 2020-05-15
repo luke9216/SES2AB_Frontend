@@ -1,0 +1,13 @@
+[{
+    "name": "Assignments",
+    "path": "/Assignments"
+}, {
+    "name": "Discussion",
+    "path": "/DiscussionBoard"
+}, {
+    "name": "Free workshop",
+    "path": "/toolbox"
+}, {
+    "name": "Resources",
+    "path": "/resources"
+}]

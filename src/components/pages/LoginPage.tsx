@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useHistory } from 'react-router-dom';
-import LoginForm from './../containers/Login/LoginForm';
 import { Grid, Typography, Link, Box, Container } from "@material-ui/core";
+import LoginForm from './../containers/LoginForm';
 
 export interface LoginPageProps {
     props?: any
@@ -31,7 +31,7 @@ const LoginPage: React.SFC<LoginPageProps> = (props) => {
     const onLogginBtnClicked = () => (event: any) => {
         if (userDetailsState.email.toLowerCase() === "test@test.com" && userDetailsState.password.toLowerCase() === "12345") {
             console.log("Login Successful")
-            window.location.href = 'http://localhost:3000/home';
+            window.location.href = 'http://localhost:3000/';
         } else {
             console.log("Login Failed")
         }

@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
 import { HamburgerRoutes } from "./../common/Hamburger/HamburgerRoutes";
-import LoginPage from "./LoginPage";
-import HomePage from "./Homepage/HomePage";
+import LoginPage from "./../containers/Login/LoginPage"
+import HomePage from "./Homepage/HomePage"
 import DiscussionBoard from "./DiscussionBoard/DiscussionBoard";
 import Assignment from "./Assignment";
 import ToolBox from "./ToolBox/ToolBox";

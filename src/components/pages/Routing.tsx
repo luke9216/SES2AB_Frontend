@@ -1,21 +1,32 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import HomePage from "./HomePage"
-import LoginPage from "./LoginPage"
+import React, { FunctionComponent } from "react";
+import { BrowserRouter, Switch } from "react-router-dom";
+import { HamburgerRoutes } from "./../common/Hamburger/HamburgerRoutes";
+import LoginPage from "./../containers/Login/LoginPage"
+import HomePage from "./Homepage/HomePage"
+import DiscussionBoard from "./DiscussionBoard/DiscussionBoard";
+import Assignment from "./Assignment";
+import ToolBox from "./ToolBox/ToolBox";
+import MakeGate from "./makeGate/MakeGate";
+import Resources from "./Resources/Resources";
+import { Route } from "react-router-dom";
 
-export interface RoutingProps {
+export interface RoutingProps { }
 
-}
 
-const Routing: React.SFC<RoutingProps> = () => {
-    return (
-        <Router>
-            <Switch>
-                <Route path="/" exact={true} render={(props: any) => <HomePage props={props} />} />
-                <Route path="/login" render={(props: any) => <LoginPage props={props} />} />
-            </Switch>
-        </Router>
-    );
-}
+export const Routing: React.SFC<RoutingProps> = () => (
+    <BrowserRouter>
+        <Switch>
+            <Route exact path="/login" render={() => <LoginPage />} />
+            <HamburgerRoutes exact path="/home" screen={HomePage} />
+            <HamburgerRoutes exact path="/discussionboard" screen={DiscussionBoard} />
+            <HamburgerRoutes exact path="/assignments" screen={Assignment} />
+            <HamburgerRoutes exact path="/toolBox" screen={ToolBox} />
+            <HamburgerRoutes exact path="/makeGate" screen={MakeGate} />
+            <HamburgerRoutes exact path="/resources" screen={Resources} />
+        </Switch>
+    </BrowserRouter>
+);
 
 export default Routing;
+
+

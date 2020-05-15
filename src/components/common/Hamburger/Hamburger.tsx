@@ -70,7 +70,7 @@ const Hamburger: React.SFC<HamburgerProps> = ({ children, drawerDetails }) => {
           >
             <MenuIcon />
           </IconButton>
-          <Button href="/home">
+          <Button href="/">
             <Typography className={classes.home} variant="h6" noWrap>
               Quantum Computing
             </Typography>
@@ -95,8 +95,8 @@ const Hamburger: React.SFC<HamburgerProps> = ({ children, drawerDetails }) => {
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />
             ) : (
-                <ChevronLeftIcon />
-              )}
+              <ChevronLeftIcon />
+            )}
           </IconButton>
         </div>
         <Divider />
@@ -112,8 +112,8 @@ const Hamburger: React.SFC<HamburgerProps> = ({ children, drawerDetails }) => {
                   ) : <AssignmentIcon /> && key % 4 === 2 ? (
                     <WorkIcon />
                   ) : (
-                          <VideoLibraryIcon />
-                        )}
+                    <VideoLibraryIcon />
+                  )}
                 </ListItemIcon>
                 <ListItemText primary={tab.name} />
               </Button>
@@ -127,7 +127,7 @@ const Hamburger: React.SFC<HamburgerProps> = ({ children, drawerDetails }) => {
         <div className={classes.toolbar} />
         {children}
       </main>
-    </div >
+    </div>
   );
 };
 

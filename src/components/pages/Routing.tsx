@@ -10,23 +10,20 @@ import MakeGate from "./makeGate/MakeGate";
 import Resources from "./Resources/Resources";
 import { Route } from "react-router-dom";
 
-export interface RoutingProps { }
-
+export interface RoutingProps {}
 
 export const Routing: React.SFC<RoutingProps> = () => (
-    <BrowserRouter>
-        <Switch>
-            <Route exact path="/login" render={() => <LoginPage />} />
-            <HamburgerRoutes exact path="/home" screen={HomePage} />
-            <HamburgerRoutes exact path="/discussionboard" screen={DiscussionBoard} />
-            <HamburgerRoutes exact path="/assignments" screen={Assignment} />
-            <HamburgerRoutes exact path="/toolBox" screen={ToolBox} />
-            <HamburgerRoutes exact path="/makeGate" screen={MakeGate} />
-            <HamburgerRoutes exact path="/resources" screen={Resources} />
-        </Switch>
-    </BrowserRouter>
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/login" render={() => <LoginPage />} />
+      <HamburgerRoutes exact path="/" screen={HomePage} />
+      <HamburgerRoutes exact path="/discussionboard" screen={DiscussionBoard} />
+      <HamburgerRoutes exact path="/assignments" screen={Assignment} />
+      <HamburgerRoutes exact path="/workshop" screen={ToolBox} />
+      <HamburgerRoutes exact path="/makeGate" screen={MakeGate} />
+      <HamburgerRoutes exact path="/resources" screen={Resources} />
+    </Switch>
+  </BrowserRouter>
 );
 
 export default Routing;
-
-

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useHistory } from 'react-router-dom';
+import { Grid, Typography, Link, Box, Container } from "@material-ui/core";
 import LoginForm from './../containers/LoginForm';
 
 export interface LoginPageProps {
@@ -37,7 +38,26 @@ const LoginPage: React.SFC<LoginPageProps> = (props) => {
     }
 
     return (
-        <LoginForm handleEmailChange={onEmailChange} handlePasswordChange={onPasswordChange} handleSubmitBtnClick={onLogginBtnClicked} />
+        <Container component="main" maxWidth="xs">
+        <React.Fragment>
+     <Grid container>
+        <LoginForm handleEmailChange={onEmailChange}  handlePasswordChange={onPasswordChange} handleSubmitBtnClick={onLogginBtnClicked} />
+
+        <Grid container>
+                <Grid item xs>
+                  <Link href="Resetpassword" variant="body2">
+                    Forgot password?
+                  </Link>
+                </Grid>
+                <Grid item>
+                  <Link href="/signup"  variant="body2">
+                    {"Don't have an account? Sign Up"}
+                  </Link>
+                </Grid>
+        </Grid>
+     </Grid>
+     </React.Fragment>
+     </Container>
     );
 };
 

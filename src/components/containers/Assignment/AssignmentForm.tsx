@@ -22,7 +22,7 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 export interface AssignmentFormProps {
   props?: any;
   assignments: Array<IAssignmentTypes>;
-  drawerAssignmentDetails: Array<IAssignmentTools>;
+  drawerAssignmentDetails?: Array<IAssignmentTools>;
 }
 
 export interface IAssignmentTypes {
@@ -36,8 +36,8 @@ export interface IAssignmentTools {
   path: string;
 }
 
-
-const AssignmentForm: React.SFC<AssignmentFormProps> = ({assignments, children,  drawerAssignmentDetails }) => {
+//assignments, children,  
+const AssignmentForm: React.SFC<AssignmentFormProps> = ({ assignments }) => {
   const classes = assignmentStyles();
   const theme = useTheme();
 
@@ -46,18 +46,18 @@ const AssignmentForm: React.SFC<AssignmentFormProps> = ({assignments, children, 
       <h1 className={classes.title1}>Assignments</h1>
       <div>
 
-      <Grid className={classes.toolbox}>
-      <List>
-          <ListItem button >
-            <Button >
-              <ListItemIcon>
-               <AddBoxIcon fontSize="large" className={classes.iconstyle} />
-              </ListItemIcon>
-              <ListItemText  />
-            </Button>
-          </ListItem>
-      </List>
-    </Grid>
+        <Grid className={classes.toolbox}>
+          <List>
+            <ListItem button >
+              <Button >
+                <ListItemIcon>
+                  <AddBoxIcon fontSize="large" className={classes.iconstyle} />
+                </ListItemIcon>
+                <ListItemText />
+              </Button>
+            </ListItem>
+          </List>
+        </Grid>
 
         <Grid>
           <ExpansionPanel>

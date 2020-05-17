@@ -151,7 +151,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
               </Typography>
             </ExpansionPanelDetails>
             </ExpansionPanel>
-          </Grid>
+        </Grid>
 
       </div>
     </div>

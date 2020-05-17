@@ -26,4 +26,12 @@ export const resourcesStyles = makeStyles((theme) => ({
         justifyContent: "center",
         display: "flex",
     },
+
+    textarea: {
+        border:"2px solid #999999",
+        width:500,
+        height: 200,
+        margin:"5px 0",
+        padding:1,
+    },
 }));

@@ -22,7 +22,8 @@ export const Routing: React.SFC<RoutingProps> = () => (
       <HamburgerRoutes exact path="/assignments" screen={Assignment} />
       <HamburgerRoutes exact path="/workshop" screen={ToolBox} />
       <HamburgerRoutes exact path="/makeGate" screen={MakeGate} />
-      <HamburgerRoutes exact path="/resources" screen={ResourcesForm} />
+      <HamburgerRoutes exact path="/resources" screen={Resources} />
+      <HamburgerRoutes exact path="/resources/upload" screen={ResourcesForm} />
     </Switch>
   </BrowserRouter>
 );

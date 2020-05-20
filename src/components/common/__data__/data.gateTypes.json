@@ -9,7 +9,25 @@
         "gates": [" add ", "subtract", "times", "divide"],
         "description": "Description for Half Turns",
         "category": ""
+    },
+    {
+        "name": "Half Turns",
+        "gates": ["Z", "Swap", "Y", "H"],
+        "description": "Description for Half Turns",
+        "category": ""
     }
-
-
+    ,
+    {
+        "name": "Quater Turns",
+        "gates": ["S", "S^-1", "Y^0.5", "Y^-0.5", "X^0.5", "X^-0.5"],
+        "description": "Description for Half Turns",
+        "category": ""
+    }
+    ,
+    {
+        "name": "Eighth Turns",
+        "gates": ["Z", "Swap", "Y", "H"],
+        "description": "Description for Half Turns",
+        "category": ""
+    }
 ]

@@ -14,11 +14,7 @@ export interface IrowBody {
 
 const Rows: React.SFC<RowsProps> = ({ rowBody, classes }) => {
   return (
-    <tr>
-      {rowBody.map((tab: IrowBody, i) => {
-        <th>{tab.replies}</th>;
-      })}
-    </tr>
+    <h1>er</h1>
   );
 };
 

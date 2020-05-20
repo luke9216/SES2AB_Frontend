@@ -21,6 +21,8 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
   } as ICircuitBoard);
 
   const onDragStart = (event: any, id: any) => {
+    console.log(event)
+    console.log(id)
     console.log("Dragging gate from toolbox", id);
     event.dataTransfer.setData("id", id);
   };

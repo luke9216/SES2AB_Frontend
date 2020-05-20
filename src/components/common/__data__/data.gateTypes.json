@@ -6,10 +6,33 @@
     },
     {
         "name": "Operation",
-        "gates": [" add ", "subtract", "times", "divide"],
+        "gates": [" + ", "-", "x", "/"],
+        "description": "Description for Half Turns",
+        "category": ""
+    },
+    {
+        "name": "Half Turns",
+        "gates": ["Z", "Swap", "Y", "H"],
         "description": "Description for Half Turns",
         "category": ""
     }
-
-
+    ,
+    {
+        "name": "Quater Turns",
+        "gates": ["S", "S^-1", "Y^0.5", "Y^-0.5", "X^0.5", "X^-0.5"],
+        "description": "Description for Half Turns",
+        "category": ""
+    },
+    {
+        "name": "Eighth Turns",
+        "gates": ["Z", "Swap", "Y", "H"],
+        "description": "Description for Half Turns",
+        "category": ""
+    },
+    {
+        "name": "Spinning",
+        "gates": ["Z^t", "Z^-t", "Y^t", "Y^-T", "X^t", "X^-T"],
+        "description": "Description for Half Turns",
+        "category": ""
+    }
 ]

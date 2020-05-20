@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Grid, Button } from "@material-ui/core";
+import { Grid, Button, Tooltip } from "@material-ui/core";
 import GateTypes, { GateButtonTab } from "./Gates";
 import { paperStyles } from "./harryStyles";
 import gateTypes from "../../common/__data__/data.gateTypes.json";

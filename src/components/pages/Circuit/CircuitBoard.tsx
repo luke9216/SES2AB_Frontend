@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Grid, Button } from "@material-ui/core";
+import { Grid, Button, Tooltip } from "@material-ui/core";
 import { paperStyles } from "./harryStyles";
 export interface CircuitBoardProps {
   gates: Array<string>;
@@ -28,9 +28,11 @@ const CircuitBoard: React.SFC<CircuitBoardProps> = ({
           onDragEnd={(e) => handleDragEnd(e)}
         >
           <Grid spacing={4}>
-            <Button key={j} onClick={(event) => handleDelete(event, j)}>
-              {item}
-            </Button>
+            <Tooltip title="To delete this gate hold down left CTRL and then left click!">
+              <Button key={j} onClick={(event) => handleDelete(event, j)}>
+                {item}
+              </Button>
+            </Tooltip>
           </Grid>
         </div>
       ))}

@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './Thread.css';
-
-import { Editor } from 'react-draft-wysiwyg';
+import {Editor}  from "react-draft-wysiwyg";
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 class Thread extends React.Component {

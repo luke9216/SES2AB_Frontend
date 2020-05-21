@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './Forum.css';
-
 import ThreadTable from './ThreadTable';
-import Thread from './Thread';
 
 
 class Forum extends React.Component {

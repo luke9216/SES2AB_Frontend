@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './ThreadTable.css';
 
 
@@ -54,7 +53,7 @@ class ThreadTable extends React.Component<any, any> {
       return (
 		  <div>
 		  	<div className="forum-thread-toolbar">
-		  		<a className="forum-thread-toolbar-link" href="">Create Thread</a>
+		  		<a className="forum-thread-toolbar-link" href="/createthread">Create Thread</a>
 		  		<a className="forum-thread-toolbar-link" href=""> Subscribe</a>		  		
 		  	</div>
 		  

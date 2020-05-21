@@ -9,6 +9,8 @@ import ToolBox from "./ToolBox/ToolBox";
 import MakeGate from "./makeGate/MakeGate";
 import Resources from "./Resources/Resources";
 import { Route } from "react-router-dom";
+import Forum from './DiscussionBoard/Forum';
+import Thread from './DiscussionBoard/Thread';
 
 export interface RoutingProps {}
 
@@ -17,7 +19,8 @@ export const Routing: React.SFC<RoutingProps> = () => (
     <Switch>
       <Route exact path="/login" render={() => <LoginPage />} />
       <HamburgerRoutes exact path="/" screen={HomePage} />
-      <HamburgerRoutes exact path="/discussionboard" screen={DiscussionBoard} />
+      <HamburgerRoutes exact path="/discussionboard" screen={Forum} />
+      <HamburgerRoutes exact path="/createthread" screen={Thread} />
       <HamburgerRoutes exact path="/assignments" screen={Assignment} />
       <HamburgerRoutes exact path="/workshop" screen={ToolBox} />
       <HamburgerRoutes exact path="/makeGate" screen={MakeGate} />

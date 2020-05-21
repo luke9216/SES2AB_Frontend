@@ -11,10 +11,10 @@ export const discussionBoardStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    background: "darkmagenta",
+    background: "linear-gradient(45deg, #536DFE 30%, #8C9EFF 90%)",
   },
   rowStyle: {
-    color: "darkmagenta",
+    color: "linear-gradient(45deg, #536DFE 30%, #8C9EFF 90%)",
     background: "gainsboro",
   },
   tableStyle: {

@@ -7,9 +7,9 @@ function authUrl(service: string) {
     return `${authEndpoint}auth/${service}/`;
 }
 
-export function userLogin(email: string, password: string) {
+export function userLogin(username: string, email: string, password: string) {
     return http.post(authUrl("login"), {
-        username: email,
+        username: username,
         email: email,
         password: password
     });

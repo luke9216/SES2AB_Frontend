@@ -14,6 +14,7 @@ export interface ICircuitBoard {
   newCircuit: Array<any>;
   circuitGate: number;
   circuitHistory: Array<Array<any>>;
+  currentHistoryIndex: number;
 }
 
 const ToolBox: React.SFC<ToolBoxProps> = () => {
@@ -22,6 +23,7 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     newCircuit: [],
     circuitGate: 0,
     circuitHistory: [[]],
+    currentHistoryIndex: 0,
   } as ICircuitBoard);
 
   const onDragStart = (event: any, id: any) => {
@@ -36,11 +38,13 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
   const onDragDrop = (event: any) => {
     let id = event.dataTransfer.getData("id");
     const newCircuit = circuitState.circuit.concat(id).filter(Boolean);
+    circuitState.circuitHistory.splice(circuitState.currentHistoryIndex + 1);
+    circuitState.circuitHistory.push(newCircuit.slice(0));
     setCircuit({
       ...circuitState,
       circuit: newCircuit,
+      currentHistoryIndex: circuitState.circuitHistory.length - 1,
     });
-    circuitState.circuitHistory.push(newCircuit);
   };
   const onDragGateStart = (event: any, index: number) => {
     setCircuit({
@@ -61,20 +65,13 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     items.splice(index, 0, dragGate);
     setCircuit({
       ...circuitState,
-      newCircuit: items,
+      circuit: items,
       circuitGate: index,
     });
   };
 
   const onDragGateEnd = (event: any, index: number) => {
-    const items = circuitState.newCircuit;
-    const newHistory = circuitState.circuitHistory.concat(items);
-    setCircuit({
-      ...circuitState,
-      circuit: items,
-      circuitGate: index,
-      circuitHistory: newHistory,
-    });
+    event.preventDefault();
   };
 
   const onDelete = (event: any, index: number) => {
@@ -93,18 +90,44 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
   };
 
   const onClear = (event: any) => {
+    circuitState.circuitHistory.push([]);
     setCircuit({
       ...circuitState,
       circuit: [],
+      currentHistoryIndex: circuitState.circuitHistory.length - 1,
     });
+  };
+
+  // do not steal my oc
+  const onUndo = (event: any) => {
+    if (circuitState.currentHistoryIndex > 0) {
+      const newHistoryIndex = circuitState.currentHistoryIndex - 1;
+      setCircuit({
+        ...circuitState,
+        circuit: circuitState.circuitHistory[newHistoryIndex].slice(0),
+        currentHistoryIndex: newHistoryIndex,
+      });
+    }
+  };
+
+  const onRedo = (event: any) => {
+    if (
+      circuitState.currentHistoryIndex <
+      circuitState.circuitHistory.length - 1
+    ) {
+      const newHistoryIndex = circuitState.currentHistoryIndex + 1;
+      setCircuit({
+        ...circuitState,
+        circuit: circuitState.circuitHistory[newHistoryIndex].slice(0),
+        currentHistoryIndex: newHistoryIndex,
+      });
+    }
   };
 
   const onCheck = (event: any) => {
     circuitState.circuitHistory.filter(
       (v, i) => circuitState.circuitHistory.indexOf(v) === i
     );
-    console.log("Current Circuit:", circuitState.circuit);
-    console.log("Current History:", circuitState.circuitHistory);
   };
 
   const classes = paperStyles();
@@ -120,8 +143,21 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
         </Grid>
         <Grid>
           <Button onClick={onClear}>Clear all</Button>
-          <Button>Undo</Button>
-          <Button disabled>Redo</Button>
+          <Button
+            disabled={circuitState.circuitHistory.length === 1}
+            onClick={onUndo}
+          >
+            Undo
+          </Button>
+          <Button
+            disabled={
+              circuitState.circuitHistory.length ===
+              circuitState.currentHistoryIndex + 1
+            }
+            onClick={onRedo}
+          >
+            Redo
+          </Button>
           <Button onClick={onCheck}>Check</Button>
         </Grid>
         <h1 className={classes.title1}>Circuit</h1>

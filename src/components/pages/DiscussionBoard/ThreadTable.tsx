@@ -31,7 +31,7 @@ class ThreadTable extends React.Component<any, any> {
          return (
             <tr>
                <td >{date}</td>
-               <td>{threadName}</td>
+               <td><a className="thread" href="/createmessage"> {threadName}</a></td>
                <td>{author}</td>
                <td>{status}</td>
                <td>{UnReadPosts}</td>

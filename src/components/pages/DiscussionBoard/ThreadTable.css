@@ -25,6 +25,10 @@
   color: white;
 }
 
+.thread {
+  color: #000000;
+  text-decoration: none;
+}
 .forum-thread-toolbar {
   background-color: #000000;
   color:#ffffff;

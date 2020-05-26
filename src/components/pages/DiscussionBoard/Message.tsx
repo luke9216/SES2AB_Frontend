@@ -11,7 +11,7 @@ class Message extends React.Component {
 				<div className="forum-header">
 					<label className="forum-header-header"> Create message </label>
 					<br />
-					<label className="forum-header-additional"> In a messag you can create a message </label>
+					<label className="forum-header-additional"> In a message you can create a message </label>
 				</div>
 
     	  		<fieldset className="fs-thread-description">

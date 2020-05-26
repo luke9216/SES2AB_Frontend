@@ -1,5 +1,13 @@
 import * as React from "react";
-import { Grid, Button, Tooltip, Paper, makeStyles, createStyles, Theme } from "@material-ui/core";
+import {
+  Grid,
+  Button,
+  Tooltip,
+  Paper,
+  makeStyles,
+  createStyles,
+  Theme,
+} from "@material-ui/core";
 
 interface GateTypesProps {
   gateTypes: Array<GateButtonTab>;
@@ -15,7 +23,7 @@ export interface GateButtonTab {
 
 class Gate {
   type: String;
-  buttonTab: GateButtonTab
+  buttonTab: GateButtonTab;
 
   constructor(type: String, buttonTab: GateButtonTab) {
     this.type = type;
@@ -24,10 +32,13 @@ class Gate {
 }
 
 const generateKey = (pre: String) => {
-  return `${ pre }_${ new Date().getTime() }`;
-}
+  return `${pre}_${new Date().getTime()}`;
+};
 
-const GateTypes: React.SFC<GateTypesProps> = ({ gateTypes, handleDragStart }) => {
+const GateTypes: React.SFC<GateTypesProps> = ({
+  gateTypes,
+  handleDragStart,
+}) => {
   var gate1 = new String();
   var gate2 = new String();
   var formRowCount = 0;
@@ -35,16 +46,15 @@ const GateTypes: React.SFC<GateTypesProps> = ({ gateTypes, handleDragStart }) =>
 
   function FormRow(gate1: String, gate2: String, map: Map<number, Gate>) {
     return (
-      < Grid container item xs={12} spacing={2} >
+      <Grid container item xs={12} spacing={2}>
         {FormBtn(gate1, 0, map)}
         {FormBtn(gate2, 1, map)}
-      </Grid >
+      </Grid>
     );
   }
 
   function FormBtn(gate: String, id: number, map: Map<number, Gate>) {
-    if (typeof map.get(id) !== 'undefined') {
-      console.log(map.get(id)!.type)
+    if (typeof map.get(id) !== "undefined") {
       return (
         <Grid item xs={6}>
           <div
@@ -59,32 +69,28 @@ const GateTypes: React.SFC<GateTypesProps> = ({ gateTypes, handleDragStart }) =>
             </Tooltip>
           </div>
         </Grid>
-      )
+      );
     }
   }
 
   return (
     <React.Fragment>
       {gateTypes.map((tab: GateButtonTab, i) => (
-
         <Grid key={i} item direction="row">
           <h2>{tab.name}</h2>
           {tab.gates.map((gate, gateNumber) => {
-            if(formRowCount == 0) {
+            if (formRowCount == 0) {
               gate1 = gate;
             } else {
               gate2 = gate;
             }
-            map.set(formRowCount, new Gate(gate, tab))
+            map.set(formRowCount, new Gate(gate, tab));
             formRowCount++;
             if (formRowCount % 2 === 0) {
               formRowCount = 0;
-              return (
-                FormRow(gate1, gate2, map)
-              )
+              return FormRow(gate1, gate2, map);
               map.clear();
             }
-
           })}
         </Grid>
       ))}

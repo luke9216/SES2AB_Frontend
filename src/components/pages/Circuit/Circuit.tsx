@@ -11,18 +11,20 @@ export interface ToolBoxProps {
 
 export interface ICircuitBoard {
   circuit: Array<any>;
+  newCircuit: Array<any>;
   circuitGate: number;
+  circuitHistory: Array<Array<any>>;
 }
 
 const ToolBox: React.SFC<ToolBoxProps> = () => {
   const [circuitState, setCircuit] = React.useState({
-    circuit: [""],
+    circuit: [],
+    newCircuit: [],
     circuitGate: 0,
+    circuitHistory: [[]],
   } as ICircuitBoard);
 
   const onDragStart = (event: any, id: any) => {
-    console.log(event)
-    console.log(id)
     console.log("Dragging gate from toolbox", id);
     event.dataTransfer.setData("id", id);
   };
@@ -33,23 +35,18 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
 
   const onDragDrop = (event: any) => {
     let id = event.dataTransfer.getData("id");
+    const newCircuit = circuitState.circuit.concat(id).filter(Boolean);
     setCircuit({
       ...circuitState,
-      circuit: circuitState.circuit.concat(id).filter(Boolean),
+      circuit: newCircuit,
     });
-    console.log("Added gate to circuit:", id);
+    circuitState.circuitHistory.push(newCircuit);
   };
-
   const onDragGateStart = (event: any, index: number) => {
-    const gate = circuitState.circuit[index];
-    console.log("rearranging this index:", index);
-    console.log("rearranging this gate:", gate);
     setCircuit({
       ...circuitState,
       circuitGate: index,
     });
-
-    console.log("Dragging circuit gates", index);
   };
 
   const onDragGateOver = (event: any, index: number) => {
@@ -62,16 +59,22 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     const items = circuitState.circuit;
     items.splice(circuitState.circuitGate, 1);
     items.splice(index, 0, dragGate);
-
     setCircuit({
       ...circuitState,
-      circuit: items,
+      newCircuit: items,
       circuitGate: index,
     });
   };
 
-  const onDragGateEnd = (event: any) => {
-    event.preventDefault();
+  const onDragGateEnd = (event: any, index: number) => {
+    const items = circuitState.newCircuit;
+    const newHistory = circuitState.circuitHistory.concat(items);
+    setCircuit({
+      ...circuitState,
+      circuit: items,
+      circuitGate: index,
+      circuitHistory: newHistory,
+    });
   };
 
   const onDelete = (event: any, index: number) => {
@@ -96,6 +99,14 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     });
   };
 
+  const onCheck = (event: any) => {
+    circuitState.circuitHistory.filter(
+      (v, i) => circuitState.circuitHistory.indexOf(v) === i
+    );
+    console.log("Current Circuit:", circuitState.circuit);
+    console.log("Current History:", circuitState.circuitHistory);
+  };
+
   const classes = paperStyles();
   return (
     <div>
@@ -111,6 +122,7 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
           <Button onClick={onClear}>Clear all</Button>
           <Button>Undo</Button>
           <Button disabled>Redo</Button>
+          <Button onClick={onCheck}>Check</Button>
         </Grid>
         <h1 className={classes.title1}>Circuit</h1>
         <div

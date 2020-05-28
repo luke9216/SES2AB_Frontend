@@ -10,12 +10,10 @@ import {
 } from "@material-ui/core";
 
 export interface LoginFormProps {
-    handleEmailChange: Function;
-    handlePasswordChange: Function;
-    handleSubmitBtnClick: Function;
+    formikProps: any;
 }
 
-const LoginForm: React.SFC<LoginFormProps> = ({ handleEmailChange, handlePasswordChange, handleSubmitBtnClick }) => {
+const LoginForm: React.SFC<LoginFormProps> = ({ formikProps }) => {
     const classes = loginStyles();
 
     return (
@@ -30,12 +28,14 @@ const LoginForm: React.SFC<LoginFormProps> = ({ handleEmailChange, handlePasswor
                         margin="normal"
                         required
                         fullWidth
+                        type="email"
                         id="email"
                         label="Email Address"
-                        name="email"
-                        autoComplete="email"
                         autoFocus
-                        onChange={handleEmailChange()}
+                        value={formikProps.values.email}
+                        onChange={formikProps.handleChange}
+                        onBlur={formikProps.handleBlur}
+                        helperText={(formikProps.errors.email && formikProps.touched.email) && formikProps.errors.email}
                     />
                     <TextField
                         variant="outlined"
@@ -47,14 +47,17 @@ const LoginForm: React.SFC<LoginFormProps> = ({ handleEmailChange, handlePasswor
                         type="password"
                         id="password"
                         autoComplete="current-password"
-                        onChange={handlePasswordChange()}
+                        value={formikProps.values.password}
+                        onChange={formikProps.handleChange}
+                        onBlur={formikProps.handleBlur}
+                        helperText={(formikProps.errors.password && formikProps.touched.password) && formikProps.errors.password}
                     />
                     <Button
                         fullWidth
                         variant="contained"
                         color="primary"
                         className={classes.loginBtn}
-                        onClick={handleSubmitBtnClick()}
+                        onClick={formikProps.handleSubmit}
                     >
                         Login
                     </Button>

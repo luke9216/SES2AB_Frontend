@@ -1,0 +1,42 @@
+.fs-thread-description
+{
+    border:2px solid green;
+    -moz-border-radius:18px;
+    -webkit-border-radius:18px;	
+    border-radius:18px;	
+    margin: 15px 0px 0px 0px;
+}
+
+.fs-thread-message {
+	height: 300px;
+
+    border:2px solid green;
+    -moz-border-radius:18px;
+    -webkit-border-radius:18px;	
+    border-radius:18px;	
+    margin: 15px 0px 0px 0px;
+}
+
+.thread-message {
+	width: 1000px;
+	height: 100px;
+}
+
+.div-thread-subject {
+	margin: 10px 15px 15px 0px;
+}
+
+.fs-thread-attachments {
+	height: 100px;
+
+    border:2px solid green;
+    -moz-border-radius:18px;
+    -webkit-border-radius:18px;	
+    border-radius:18px;	
+    margin: 15px 0px 0px 0px;
+}
+
+.btn-attach-file {
+    margin: 0px 0px 0px 15px;
+	width: 200px;
+}

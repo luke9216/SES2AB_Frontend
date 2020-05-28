@@ -8,6 +8,7 @@ import Assignment from "./Assignment";
 import ToolBox from "./ToolBox/ToolBox";
 import MakeGate from "./makeGate/MakeGate";
 import Resources from "./Resources/Resources";
+import ResourcesForm from "./Resources/ResourcesForm";
 import { Route } from "react-router-dom";
 
 export interface RoutingProps {}
@@ -22,6 +23,7 @@ export const Routing: React.SFC<RoutingProps> = () => (
       <HamburgerRoutes exact path="/workshop" screen={ToolBox} />
       <HamburgerRoutes exact path="/makeGate" screen={MakeGate} />
       <HamburgerRoutes exact path="/resources" screen={Resources} />
+      <HamburgerRoutes exact path="/resources/upload" screen={ResourcesForm} />
     </Switch>
   </BrowserRouter>
 );

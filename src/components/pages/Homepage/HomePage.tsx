@@ -1,14 +1,11 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 import { RouteComponentProps } from "react-router";
-import NavigationButtons, {
-  NavigationButtonsTab,
-} from "../../common/NavigationButtons";
-import navigationTabs from "../../common/__data__/data.navigationTabs.json";
+import { paperStyles } from "./styles";
 import logo from "../../../images/uts-logo.png";
 import { logoStyles } from "../../common/styles";
 import Bulletin from "./Bulletin";
-import Todo from "./Todo"
+import Todo from "./Todo";
 
 export interface HomePageProps {
   props?: any;
@@ -16,19 +13,23 @@ export interface HomePageProps {
 }
 
 const HomePage: React.SFC<HomePageProps> = ({ props }) => {
-  const classes = logoStyles();
+  const logoClasses = logoStyles();
+  const classes = paperStyles();
   return (
     <React.Fragment>
-      <div>
-        <img src={logo} className={classes.logo} alt="UTS Logo" />
+      <div className={classes.root}>
+        <img src={logo} className={logoClasses.logo} alt="UTS Logo" />
         <Typography variant="h3">UTS: Quantum Computing</Typography>
       </div>
-      <div>
-        <Bulletin />
-      </div>
-      <div>
-        <Todo />
-      </div>
+      <Grid container spacing={3}>
+        <Grid item className={classes.border}>
+          <Bulletin />
+        </Grid>
+        <Grid item className={classes.border}>
+          <Todo />
+        </Grid>
+      </Grid>
+      <div></div>
     </React.Fragment>
   );
 };

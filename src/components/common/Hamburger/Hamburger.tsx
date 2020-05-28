@@ -26,6 +26,7 @@ import { Button } from "@material-ui/core";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import WorkIcon from "@material-ui/icons/Work";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
+import HomeIcon from "@material-ui/icons/Home";
 
 export interface HamburgerProps {
   props?: any;
@@ -71,8 +72,11 @@ const Hamburger: React.SFC<HamburgerProps> = ({ children, drawerDetails }) => {
             <MenuIcon />
           </IconButton>
           <Button href="/">
+            <HomeIcon className={classes.home}></HomeIcon>
+          </Button>
+          <Button href="/login">
             <Typography className={classes.home} variant="h6" noWrap>
-              Quantum Computing
+              Sign In
             </Typography>
           </Button>
         </Toolbar>

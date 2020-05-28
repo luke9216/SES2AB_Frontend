@@ -5,7 +5,7 @@ import LoginPage from "./Login/LoginPage"
 import HomePage from "./Homepage/HomePage"
 import DiscussionBoard from "./DiscussionBoard/DiscussionBoard";
 import Assignment from "./Assignment";
-import ToolBox from "./ToolBox/ToolBox";
+import ToolBox from "./Circuit/Circuit";
 import MakeGate from "./makeGate/MakeGate";
 import Resources from "./Resources/Resources";
 import ResourcesForm from "./Resources/ResourcesForm";

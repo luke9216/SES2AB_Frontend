@@ -1,60 +1,38 @@
 import * as React from "react";
 import { discussionBoardStyles } from "./style";
+import discussionTitle from "../../common/__data__/data.discussionTitle.json";
+import discussionBody from "../../common/__data__/data.discussionBody.json";
+import Columns from "./Columns";
+import Rows, { IrowBody } from "./Rows";
 
 export interface DiscussionBoardProps {}
 
 const DiscussionBoard: React.SFC = () => {
   const classes = discussionBoardStyles();
+  const columnTitles = discussionTitle;
+  const rowBody = discussionBody;
   return (
     <div className={classes.header}>
       <body>
         <h1 className={classes.tableTitle}>Discussion Forum</h1>
         <table className={classes.tableStyle}>
-          <tr className={classes.rowStyle}>
-            <th>Discussion topic</th>
-            <th>Replies</th>
-            <th>Last Post</th>
-            <th>First Post</th>
-          </tr>
+          <Columns
+            columnTitles={columnTitles}
+            classes={discussionBoardStyles()}
+          />
           <tbody>
-            <tr>
-              <th>Discussion1</th>
-              <th>User 1 Test</th>
-              <th>28th Apr</th>
-              <th>Today 3:05pm</th>
-            </tr>
-            <tr className={classes.rowStyle}>
-              <th>Discussion1</th>
-              <th>User1 Test</th>
-              <th>28th Apr</th>
-              <th>Today 3:05pm</th>
-            </tr>
-            <tr>
-              <th>Discussion1</th>
-              <th>User1 Test</th>
-              <th>28th Apr</th>
-              <th>Today 3:05pm</th>
-            </tr>
-            <tr className={classes.rowStyle}>
-              <th>Discussion1</th>
-              <th>User1 Test</th>
-              <th>28th Apr</th>
-              <th>Today 3:05pm</th>
-            </tr>
-            <tr>
-              <th>Discussion1</th>
-              <th>User1 Test</th>
-              <th>28th Apr</th>
-              <th>Today 3:05pm</th>
-            </tr>
-          
+            {rowBody.map((rowBody, i) => (
+              <Rows
+                key={i}
+                rowBody={(rowBody as unknown) as Array<IrowBody>}
+                classes={classes}
+              />
+            ))}
           </tbody>
-         
         </table>
       </body>
     </div>
   );
 };
-
 
 export default DiscussionBoard;

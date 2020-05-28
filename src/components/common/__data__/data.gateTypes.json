@@ -1,60 +1,38 @@
 [{
-        "name": "Probes",
-        "gates": [" P ", " ZP "],
+        "name": "Number",
+        "gates": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
         "description": "Description for Probes",
         "category": ""
     },
     {
-        "name": "Half Turns",
-        "gates": ["gate c", "gate d"],
+        "name": "Operation",
+        "gates": [" + ", "-", "x", "/"],
         "description": "Description for Half Turns",
         "category": ""
-
-
-
-    }, {
-        "name": "Quarter Turns",
-        "gates": ["gate e", "gate f"],
-        "description": "Description for Quarter Turns",
-        "category": ""
-
-    }, {
-        "name": "Spinning",
-        "gates": ["gate g", "gate f"],
-        "description": "Description for Spinning",
-        "category": ""
-
-
     },
     {
-        "name": "Formulaic",
-        "gates": ["gate h", "gate i"],
-        "description": "Description for Formulaic",
+        "name": "Half Turns",
+        "gates": ["Z", "Swap", "Y", "H"],
+        "description": "Description for Half Turns",
         "category": ""
-
-    },
-    {
-        "name": "Parametrized",
-        "gates": ["gate j", "gate k"],
-        "description": "Description for Parametrized",
-        "category": ""
-
-
-    },
-    {
-        "name": "Sampling",
-        "gates": ["gate l", "gate m"],
-        "description": "Description for Sampling",
-        "category": ""
-
-
-    },
-    {
-        "name": "Parity",
-        "gates": ["gate1", "gate2"],
-        "description": "Description for Parity",
-        "category": ""
-
     }
-
+    ,
+    {
+        "name": "Quater Turns",
+        "gates": ["S", "S^-1", "Y^0.5", "Y^-0.5", "X^0.5", "X^-0.5"],
+        "description": "Description for Half Turns",
+        "category": ""
+    },
+    {
+        "name": "Eighth Turns",
+        "gates": ["Z", "Swap", "Y", "H"],
+        "description": "Description for Half Turns",
+        "category": ""
+    },
+    {
+        "name": "Spinning",
+        "gates": ["Z^t", "Z^-t", "Y^t", "Y^-T", "X^t", "X^-T"],
+        "description": "Description for Half Turns",
+        "category": ""
+    }
 ]

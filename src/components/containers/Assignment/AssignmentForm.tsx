@@ -16,7 +16,6 @@ export interface IAssignmentTypes {
   Description: String;
 }
 
-
 const AssignmentForm: React.SFC<AssignmentFormProps> = () => {
   const classes = assignmentStyles();
 
@@ -36,13 +35,17 @@ const AssignmentForm: React.SFC<AssignmentFormProps> = () => {
             <ExpansionPanelDetails>
               <Typography>
                 Your assignment is to make a circuit using A, B and C included.
-              <p>
-                  <Button variant="outlined" color="primary" href={"http://localhost:3000/"}>
+                <p>
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    href="http://localhost:3000/workshop"
+                  >
                     Circuit Page
-              </Button>
+                  </Button>
                   <Button variant="outlined" color="secondary">
                     SUBMIT
-              </Button>
+                  </Button>
                 </p>
               </Typography>
             </ExpansionPanelDetails>
@@ -60,10 +63,10 @@ const AssignmentForm: React.SFC<AssignmentFormProps> = () => {
             <ExpansionPanelDetails>
               <Typography>
                 Your assignment is to remake the same circuit without using C.
-              <p>
+                <p>
                   <Button variant="outlined" disabled>
                     SUBMIT
-              </Button>
+                  </Button>
                 </p>
               </Typography>
             </ExpansionPanelDetails>
@@ -80,11 +83,12 @@ const AssignmentForm: React.SFC<AssignmentFormProps> = () => {
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                Your assignment is to redo your first 2 assignments... but better!
-              <p>
+                Your assignment is to redo your first 2 assignments... but
+                better!
+                <p>
                   <Button variant="outlined" disabled>
                     SUBMIT
-              </Button>
+                  </Button>
                 </p>
               </Typography>
             </ExpansionPanelDetails>

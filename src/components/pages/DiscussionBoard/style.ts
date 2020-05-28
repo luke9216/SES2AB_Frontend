@@ -14,7 +14,7 @@ export const discussionBoardStyles = makeStyles((theme) => ({
     background: "linear-gradient(45deg, #536DFE 30%, #8C9EFF 90%)",
   },
   rowStyle: {
-    color: "linear-gradient(45deg, #536DFE 30%, #8C9EFF 90%)",
+    color: "darkblue",
     background: "gainsboro",
   },
   tableStyle: {

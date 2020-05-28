@@ -5,17 +5,18 @@ export const paperStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   circuit: {
-    background: "grey",
+    background: "white",
+    border: "solid",
     marginRight: "40px",
-    width: "500px",
-    padding: "3em",
+    width: "1000px",
+    padding: "10em 0 30px",
   },
-
-  toolBoxFrame: {
-    //marginLeft: "50px",
-    //    marginRight: "50px",
+  circuitGates: {
+    background: "grey",
+    border: "solid",
+    marginRight: "40px",
+    width: "1000px",
   },
-
   title1: {
     background: "linear-gradient(45deg, #536DFE 30%, #8C9EFF 90%)",
     border: 0,
@@ -29,8 +30,6 @@ export const paperStyles = makeStyles((theme) => ({
   },
 
   CircuitBoxFrame: {
-    //marginLeft: "50px",
-    //    marginRight: "50px",
     hight: "10px",
     width: "10px",
     bottom: 10,

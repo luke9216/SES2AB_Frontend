@@ -1,12 +1,10 @@
 import * as React from "react";
-import AssignmentForm, { IAssignmentTypes } from "./../containers/Assignment/AssignmentForm";
+import AssignmentForm, {
+  IAssignmentTypes,
+} from "./../containers/Assignment/AssignmentForm";
 import assignments from "../common/__data__/data.Assignments.json";
 
-export interface AssignmentProps { }
-
-const onClick = () => (event: any) => {
-  console.log("this button was clicked");
-};
+export interface AssignmentProps {}
 
 const Assignment: React.SFC = () => {
   return (

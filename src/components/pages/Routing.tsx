@@ -11,7 +11,11 @@ import Resources from "./Resources/Resources";
 import { Route } from "react-router-dom";
 import Forum from './DiscussionBoard/Forum';
 import Thread from './DiscussionBoard/Thread';
+<<<<<<< Updated upstream
 import Message from './DiscussionBoard/Message';
+=======
+import Message from './DiscussionBoard/Message'
+>>>>>>> Stashed changes
 
 export interface RoutingProps {}
 
@@ -26,7 +30,11 @@ export const Routing: React.SFC<RoutingProps> = () => (
       <HamburgerRoutes exact path="/workshop" screen={ToolBox} />
       <HamburgerRoutes exact path="/makeGate" screen={MakeGate} />
       <HamburgerRoutes exact path="/resources" screen={Resources} />
+<<<<<<< Updated upstream
       <HamburgerRoutes exact path="/createMessage" screen={Message} />
+=======
+      <HamburgerRoutes exact path="/createmessage" screen={Message} />
+>>>>>>> Stashed changes
     </Switch>
   </BrowserRouter>
 );

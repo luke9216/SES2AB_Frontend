@@ -18,6 +18,11 @@ class Message extends React.Component {
 					<label className="forum-header-header"> Thread: Progress Report  </label>
 					<br /> 
 					<br />
+<<<<<<< Updated upstream
+=======
+					<label className="forum-header-additional"> Here a user is able to create a message </label>
+				</div>
+>>>>>>> Stashed changes
 
 				</div>
 	

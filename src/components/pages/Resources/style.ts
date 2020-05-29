@@ -29,7 +29,21 @@ export const resourcesStyles = makeStyles((theme) => ({
         margin:"5px 0",
         padding:1,
     },
-    
+
+    input: {
+        display:"block",
+        outline: "none",
+        borderRadius: "5px",
+        borderStyle: "none",
+        height: "45px",
+        width: "400px",
+        padding:"0 16px",
+        fontSize: "16px",
+        backgroundColor: "rgb(250,250,250)",
+        margin: "0 auto",
+        border: "solid",
+    },
+
     title1: {
         background: "linear-gradient(45deg, #536DFE 30%, #8C9EFF 90%)",
         border: 0,
@@ -47,7 +61,7 @@ export const resourcesStyles = makeStyles((theme) => ({
         background: "white",
         border: 0,
         borderRadius: 3,
-        boxShadow: "0 3px 5px 2px rgba(140, 158, 255, .3)",
+        boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
         color: "#536DFE",
         width: 500,
         height: 38,

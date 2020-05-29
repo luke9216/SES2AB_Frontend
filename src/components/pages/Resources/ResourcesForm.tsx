@@ -27,6 +27,10 @@ const Resources: React.SFC<ResourcesFormProps> = () => {
     setOpen(true);
   };
 
+  const onChangeHandler = (event: any) => {
+    console.log(event?.target.files[0])
+  };
+
   const onSubmit = (event: any) => {
     // resourceUpload("hello", "world").then((response) => {
     //   if (response.status === 200) {
@@ -71,7 +75,7 @@ const Resources: React.SFC<ResourcesFormProps> = () => {
 
         <label>
             <h2 className={classes.title2}>File</h2>
-            <input className={classes.input} type="file" name="file"/>
+            <input className={classes.input} type="file" name="file" onChange={onChangeHandler}/>
         </label>
           
         <label>

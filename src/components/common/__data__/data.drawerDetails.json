@@ -1,13 +1,18 @@
 [{
-    "name": "Assignments",
-    "path": "/Assignments"
-}, {
-    "name": "Discussion",
-    "path": "/DiscussionBoard"
-}, {
-    "name": "Free workshop",
-    "path": "/workshop"
-}, {
-    "name": "Resources",
-    "path": "/resources"
-}]
+        "name": "Assignments",
+        "path": "/assignments"
+    }, {
+        "name": "Discussion",
+        "path": "/discussionBoard"
+    }, {
+        "name": "Free workshop",
+        "path": "/workshop"
+    }, {
+        "name": "Resources",
+        "path": "/resources"
+    },
+    {
+        "name": "Your saved circuits!",
+        "path": "/circuits"
+    }
+]

@@ -27,7 +27,7 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 import WorkIcon from "@material-ui/icons/Work";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import HomeIcon from "@material-ui/icons/Home";
-
+import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 export interface HamburgerProps {
   props?: any;
   drawerDetails: Array<IhamburgerTypes>;
@@ -115,8 +115,10 @@ const Hamburger: React.SFC<HamburgerProps> = ({ children, drawerDetails }) => {
                     <DashboardIcon />
                   ) : <AssignmentIcon /> && key % 4 === 2 ? (
                     <WorkIcon />
-                  ) : (
+                  ) : <VideoLibraryIcon /> && key % 6 === 3 ? (
                     <VideoLibraryIcon />
+                  ) : (
+                    <PlaylistAddIcon />
                   )}
                 </ListItemIcon>
                 <ListItemText primary={tab.name} />

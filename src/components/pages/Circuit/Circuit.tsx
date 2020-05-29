@@ -4,6 +4,8 @@ import GateTypes, { GateButtonTab } from "./Gates";
 import { paperStyles } from "./harryStyles";
 import gateTypes from "../../common/__data__/data.gateTypes.json";
 import CircuitBoard from "./CircuitBoard";
+import { circuitUpload } from "./../../../services/CircuitService";
+import { toast } from "react-toastify";
 
 export interface ToolBoxProps {
   props?: any;
@@ -124,10 +126,15 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     }
   };
 
-  const onCheck = (event: any) => {
-    circuitState.circuitHistory.filter(
-      (v, i) => circuitState.circuitHistory.indexOf(v) === i
-    );
+  const onSubmit = (event: any) => {
+    circuitUpload(circuitState.circuit).then((response) => {
+      if (response.status === 200) {
+        console.log("success:", response.data);
+      } else {
+        toast.error("An error occured. Please try again later");
+        console.log(response);
+      }
+    });
   };
 
   const classes = paperStyles();
@@ -158,7 +165,7 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
           >
             Redo
           </Button>
-          <Button onClick={onCheck}>Check</Button>
+          <Button onClick={onSubmit}>Submit</Button>
         </Grid>
         <h1 className={classes.title1}>Circuit</h1>
         <div

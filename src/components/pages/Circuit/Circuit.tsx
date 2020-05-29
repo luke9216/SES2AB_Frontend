@@ -149,7 +149,7 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
           />
         </Grid>
         <Grid>
-          <Button onClick={onClear}>Clear all</Button>
+          <Button className={classes.clear} variant="outlined" onClick={onClear}>Clear all</Button>
           <Button
             disabled={circuitState.circuitHistory.length === 1}
             onClick={onUndo}
@@ -165,7 +165,7 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
           >
             Redo
           </Button>
-          <Button onClick={onSubmit}>Submit</Button>
+          <Button className={classes.submit} variant="outlined" onClick={onSubmit}>Submit</Button>
         </Grid>
         <h1 className={classes.title1}>Circuit</h1>
         <div

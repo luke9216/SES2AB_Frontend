@@ -29,6 +29,16 @@ export const paperStyles = makeStyles((theme) => ({
     display: "flex",
   },
 
+  clear: {
+    color: "white",
+    backgroundColor: "#FF3220",
+  },
+
+  submit: {
+    color: "white",
+    backgroundColor: "#209F20",
+  },
+
   CircuitBoxFrame: {
     hight: "10px",
     width: "10px",

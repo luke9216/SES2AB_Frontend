@@ -44,9 +44,9 @@ const Resources: React.SFC<ResourcesFormProps> = () => {
 
   return (
   <div className={classes.div}>
-    <Button variant="outlined" className={classes.button} onClick={() => window.history.go(-1)}>Back</Button>
     <div>
     <Grid container direction = "column" justify = "center" alignItems="center">
+    <Button variant="outlined" className={classes.back} onClick={() => window.history.go(-1)}>Back</Button>
         <h1 className={classes.title1}>Upload</h1>
         <label>
           <h2 className={classes.title2}>Category</h2>

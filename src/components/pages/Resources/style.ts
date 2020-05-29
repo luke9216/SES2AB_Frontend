@@ -22,6 +22,12 @@ export const resourcesStyles = makeStyles((theme) => ({
         color: "white",
         backgroundColor: "#536DFE",
     },
+    
+    back: {
+        color: "white",
+        backgroundColor: "#536DFE",
+        marginRight: "425px",
+    },
 
     formControl: {
         display: "flex",

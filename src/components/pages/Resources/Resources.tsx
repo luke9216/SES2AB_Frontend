@@ -6,18 +6,49 @@ import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { resourceUpload } from '../../../services/ResourceService';
+import { toast } from "react-toastify";
 
 export interface ResourcesProps {}
 
 const Resources: React.SFC<ResourcesProps> = () => {
   const classes = resourcesStyles();
+  const [age, setAge] = React.useState('');
+  const [open, setOpen] = React.useState(false);
+
+  const onChange = (event: any) => {
+    setAge(event.target.value);
+  };
+  
+  const onClose = () => {
+    setOpen(false);
+  };
+  
+  const onOpen = () => {
+    setOpen(true);
+  };
+
+  const onChangeHandler = (event: any) => {
+    console.log(event?.target.files[0])
+  };
+
+  const onSubmit = (event: any) => {
+    // resourceUpload("hello", "world").then((response) => {
+    //   if (response.status === 200) {
+    //     console.log("success:", response.data);
+    //   } else {
+    //     toast.error("An error occured. Please try again later");
+    //     console.log(response);
+    //   }
+    // });
+  };
+
 
   return (
     <div>
       <Button variant="outlined" className={classes.button} href="/resources/upload">Upload a resource</Button>
       <div>
         <h1 className={classes.title3}>TextBooks</h1>
-
         <Grid>
           <ExpansionPanel>
             <ExpansionPanelSummary

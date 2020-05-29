@@ -7,10 +7,6 @@ export const resourcesStyles = makeStyles((theme) => ({
         alignItems: "center",
     },
 
-    div: {
-        padding:"20px 980px 0",
-    },
-
     heading1: {
         display: "flex",
         justifyContent: "center",
@@ -22,7 +18,7 @@ export const resourcesStyles = makeStyles((theme) => ({
         color: "white",
         backgroundColor: "#536DFE",
     },
-    
+
     back: {
         color: "white",
         backgroundColor: "#536DFE",

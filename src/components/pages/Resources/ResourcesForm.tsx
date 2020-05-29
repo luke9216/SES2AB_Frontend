@@ -15,15 +15,15 @@ const Resources: React.SFC<ResourcesFormProps> = () => {
   const [age, setAge] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
-  const handleChange = (event: any) => {
+  const onChange = (event: any) => {
     setAge(event.target.value);
   };
 
-  const handleClose = () => {
+  const onClose = () => {
     setOpen(false);
   };
 
-  const handleOpen = () => {
+  const onOpen = () => {
     setOpen(true);
   };
 
@@ -58,10 +58,10 @@ const Resources: React.SFC<ResourcesFormProps> = () => {
               labelId="category-label"
               id="category"
               open={open}
-              onClose={handleClose}
-              onOpen={handleOpen}
+              onClose={onClose}
+              onOpen={onOpen}
               value={age}
-              onChange={handleChange}
+              onChange={onChange}
             >
               <MenuItem value="">
                 <em>None</em>

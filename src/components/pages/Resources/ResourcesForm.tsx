@@ -1,6 +1,8 @@
 import React from "react";
 import { Grid, MenuItem, FormControl, Select, InputLabel, Button } from "@material-ui/core";
 import { resourcesStyles } from "./style";
+import { resourceUpload } from '../../../services/ResourceService';
+import { toast } from "react-toastify";
 
 export interface ResourcesFormProps {
   props?: any;
@@ -23,6 +25,17 @@ const Resources: React.SFC<ResourcesFormProps> = () => {
 
   const handleOpen = () => {
     setOpen(true);
+  };
+
+  const onSubmit = (event: any) => {
+    // resourceUpload("hello", "world").then((response) => {
+    //   if (response.status === 200) {
+    //     console.log("success:", response.data);
+    //   } else {
+    //     toast.error("An error occured. Please try again later");
+    //     console.log(response);
+    //   }
+    // });
   };
 
   return (
@@ -65,8 +78,7 @@ const Resources: React.SFC<ResourcesFormProps> = () => {
               <h2 className={classes.title2}>Description</h2>
               <textarea className={classes.textarea}></textarea>
             </label>
-
-            <Button variant="outlined" className={classes.button}>Submit</Button>
+            <Button variant="outlined" onClick={onSubmit} className={classes.button}>Submit</Button>
         </Grid>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, Button } from "@material-ui/core";
 import { resourcesStyles } from "./style";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
@@ -14,6 +14,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
 
   return (
     <div>
+      <Button className={classes.button} href="/resources/upload">Upload a resource</Button>
       <div>
         <h1 className={classes.title1}>TextBooks</h1>
 
@@ -139,7 +140,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
                 <Typography>VIDEO LINK GOES HERE!</Typography>
               </ExpansionPanelDetails>
             </ExpansionPanel>
-            
+
             <ExpansionPanel>
               <ExpansionPanelSummary
                 expandIcon={<ExpandMoreIcon/>}

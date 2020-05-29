@@ -50,6 +50,7 @@ const Hamburger: React.SFC<HamburgerProps> = ({ children, drawerDetails }) => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  
   return (
     <div className={classes.root}>
       <CssBaseline />

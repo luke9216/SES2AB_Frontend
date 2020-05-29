@@ -43,7 +43,7 @@ const Resources: React.SFC<ResourcesFormProps> = () => {
   };
 
   return (
-  <div className={classes.div}>
+  <div>
     <div>
     <Grid container direction = "column" justify = "center" alignItems="center">
     <Button variant="outlined" className={classes.back} onClick={() => window.history.go(-1)}>Back</Button>

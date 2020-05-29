@@ -1,13 +1,17 @@
 import * as React from 'react';
 import { useHistory } from 'react-router-dom';
-import LoginForm from './../containers/Login/LoginForm';
 import { Grid, Typography, Link, Box, Container } from "@material-ui/core";
+import LoginForm from './../../containers/Login/LoginForm';
+import { userLogin } from "./../../../services/AuthService";
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+import { toast } from "react-toastify";
 
 export interface LoginPageProps {
     props?: any
 }
 
-const LoginPage: React.SFC<LoginPageProps> = (props) => {
+const LoginPage: React.SFC<LoginPageProps> = () => {
     const history = useHistory();
     const [userDetailsState, setUserDetailsState] = React.useState({
         email: "",
@@ -28,20 +32,37 @@ const LoginPage: React.SFC<LoginPageProps> = (props) => {
         })
     };
 
-    const onLogginBtnClicked = () => (event: any) => {
-        if (userDetailsState.email.toLowerCase() === "test@test.com" && userDetailsState.password.toLowerCase() === "12345") {
-            console.log("Login Successful")
-            window.location.href = 'http://localhost:3000/home';
-        } else {
-            console.log("Login Failed")
-        }
+    const LoginSchema = Yup.object().shape({
+        email: Yup.string()
+            .email('Invalid email')
+            .required('Student Email Required'),
+        password: Yup.string()
+            .required('Password Required')
+    });
+
+    const onLogginBtnClicked = async (values: any) => {
+        let username = values.email.toLowerCase().split('@')[0]
+        userLogin(username, values.email.toLowerCase(), values.password.toLowerCase()).then(response => {
+            if(response.status === 200) {
+                window.location.pathname = "/"
+            } else {
+                toast.error("An error occured. Please try again later");
+                console.log(response)
+            }
+        })
     }
 
     return (
         <Container component="main" maxWidth="xs">
         <React.Fragment>
-     <Grid container>
-        <LoginForm handleEmailChange={onEmailChange}  handlePasswordChange={onPasswordChange} handleSubmitBtnClick={onLogginBtnClicked} />
+        <Grid container>
+            <Formik
+                initialValues={userDetailsState}
+                validationSchema={LoginSchema}
+                onSubmit={(values: any) => onLogginBtnClicked(values)}
+            >
+                {(props) => <LoginForm formikProps={props} />}
+            </Formik>
 
         <Grid container>
                 <Grid item xs>

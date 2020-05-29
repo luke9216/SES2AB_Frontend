@@ -37,7 +37,7 @@ const AssignmentForm: React.SFC<AssignmentFormProps> = () => {
               <Typography>
                 Your assignment is to make a circuit using A, B and C included.
               <p>
-                  <Button variant="outlined" color="primary" href="http://localhost:3000/toolbox">
+                  <Button variant="outlined" color="primary" href={"http://localhost:3000/"}>
                     Circuit Page
               </Button>
                   <Button variant="outlined" color="secondary">

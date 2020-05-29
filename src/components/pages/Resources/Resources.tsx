@@ -14,145 +14,135 @@ const Resources: React.SFC<ResourcesProps> = () => {
 
   return (
     <div>
-      <h1 className={classes.title1}>TextBooks</h1>
       <div>
+        <h1 className={classes.title1}>TextBooks</h1>
         <Grid>
           <ExpansionPanel>
             <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
+              expandIcon={<ExpandMoreIcon/>}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
               <Typography>TextBook 1</Typography>
             </ExpansionPanelSummary>
+
             <ExpansionPanelDetails>
-              <Typography>
-                TEXTBOOK PDF LINK GOES HERE!
-              </Typography>
+              <Typography>TEXTBOOK PDF LINK GOES HERE!</Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
           <ExpansionPanel>
             <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
+              expandIcon={<ExpandMoreIcon/>}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
               <Typography>TextBook 2</Typography>
             </ExpansionPanelSummary>
+
             <ExpansionPanelDetails>
-              <Typography>
-               TEXTBOOK PDF LINK GOES HERE!
-              </Typography>
+              <Typography>TEXTBOOK PDF LINK GOES HERE!</Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
           <ExpansionPanel>
             <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
+              expandIcon={<ExpandMoreIcon/>}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
               <Typography>TextBook 3</Typography>
             </ExpansionPanelSummary>
+            
             <ExpansionPanelDetails>
-              <Typography>
-                TEXTBOOK PDF LINK GOES HERE!
-              </Typography>
+              <Typography>TEXTBOOK PDF LINK GOES HERE!</Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
         </Grid>
       </div>
       <div>
+        <h1 className={classes.title1}>Lectures</h1>
         <Grid>
-          <h1 className={classes.title1}>Lectures</h1>
           <ExpansionPanel>
             <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
+              expandIcon={<ExpandMoreIcon/>}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
               <Typography>Lecture 1</Typography>
             </ExpansionPanelSummary>
+
             <ExpansionPanelDetails>
-              <Typography>
-                LECTURE GOES HERE!
-              </Typography>
+              <Typography>LECTURE GOES HERE!</Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
-        <ExpansionPanel>
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
+          <ExpansionPanel>
+              <ExpansionPanelSummary
+                expandIcon={<ExpandMoreIcon/>}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
               <Typography>Lecture 2</Typography>
             </ExpansionPanelSummary>
+
             <ExpansionPanelDetails>
-              <Typography>
-                LECTURE GOES HERE!
-              </Typography>
+              <Typography>LECTURE GOES HERE!</Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
           <ExpansionPanel>
             <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
+              expandIcon={<ExpandMoreIcon/>}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
               <Typography>Lecture 3</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
-              <Typography>
-                LECTURE GOES HERE!
-              </Typography>
+              <Typography>LECTURE GOES HERE!</Typography>
             </ExpansionPanelDetails>
+          </ExpansionPanel>
+        </Grid>
+      </div>
+      <div>
+          <h1 className={classes.title1}>Videos</h1>
+          <Grid>
+            <ExpansionPanel>
+              <ExpansionPanelSummary
+                expandIcon={<ExpandMoreIcon/>}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography>Video 1</Typography>
+              </ExpansionPanelSummary>
+
+              <ExpansionPanelDetails>
+                <Typography>VIDEO LINK GOES HERE!</Typography>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+            <ExpansionPanel>
+              <ExpansionPanelSummary
+                expandIcon={<ExpandMoreIcon/>}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography>Video 2</Typography>
+              </ExpansionPanelSummary>
+
+              <ExpansionPanelDetails>
+                <Typography>VIDEO LINK GOES HERE!</Typography>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+            <ExpansionPanel>
+              <ExpansionPanelSummary
+                expandIcon={<ExpandMoreIcon/>}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography>Video 3</Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails>
+                <Typography>VIDEO LINK GOES HERE!</Typography>
+              </ExpansionPanelDetails>
             </ExpansionPanel>
           </Grid>
-          <Grid>
-          <h1 className={classes.title1}>Videos</h1>
-          <ExpansionPanel>
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography>Video 1</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                VIDEO LINK GOES HERE!
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-        <ExpansionPanel>
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography>Video 2</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                VIDEO LINK GOES HERE!
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-          <ExpansionPanel>
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography>Video 3</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                VIDEO LINK GOES HERE!
-              </Typography>
-            </ExpansionPanelDetails>
-            </ExpansionPanel>
-        </Grid>
-
       </div>
     </div>
   );

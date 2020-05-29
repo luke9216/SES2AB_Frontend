@@ -14,7 +14,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
 
   return (
     <div>
-      <Button className={classes.button} href="/resources/upload">Upload a resource</Button>
+      <Button variant="outlined" className={classes.button} href="/resources/upload">Upload a resource</Button>
       <div>
         <h1 className={classes.title3}>TextBooks</h1>
 

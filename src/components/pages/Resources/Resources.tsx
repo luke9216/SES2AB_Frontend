@@ -16,6 +16,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
     <div>
       <div>
         <h1 className={classes.title1}>TextBooks</h1>
+
         <Grid>
           <ExpansionPanel>
             <ExpansionPanelSummary
@@ -30,6 +31,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
               <Typography>TEXTBOOK PDF LINK GOES HERE!</Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
+
           <ExpansionPanel>
             <ExpansionPanelSummary
               expandIcon={<ExpandMoreIcon/>}
@@ -43,6 +45,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
               <Typography>TEXTBOOK PDF LINK GOES HERE!</Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
+
           <ExpansionPanel>
             <ExpansionPanelSummary
               expandIcon={<ExpandMoreIcon/>}
@@ -58,8 +61,10 @@ const Resources: React.SFC<ResourcesProps> = () => {
           </ExpansionPanel>
         </Grid>
       </div>
+
       <div>
         <h1 className={classes.title1}>Lectures</h1>
+
         <Grid>
           <ExpansionPanel>
             <ExpansionPanelSummary
@@ -74,6 +79,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
               <Typography>LECTURE GOES HERE!</Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
+
           <ExpansionPanel>
               <ExpansionPanelSummary
                 expandIcon={<ExpandMoreIcon/>}
@@ -87,6 +93,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
               <Typography>LECTURE GOES HERE!</Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>
+
           <ExpansionPanel>
             <ExpansionPanelSummary
               expandIcon={<ExpandMoreIcon/>}
@@ -101,6 +108,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
           </ExpansionPanel>
         </Grid>
       </div>
+
       <div>
           <h1 className={classes.title1}>Videos</h1>
           <Grid>
@@ -117,6 +125,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
                 <Typography>VIDEO LINK GOES HERE!</Typography>
               </ExpansionPanelDetails>
             </ExpansionPanel>
+
             <ExpansionPanel>
               <ExpansionPanelSummary
                 expandIcon={<ExpandMoreIcon/>}
@@ -130,6 +139,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
                 <Typography>VIDEO LINK GOES HERE!</Typography>
               </ExpansionPanelDetails>
             </ExpansionPanel>
+            
             <ExpansionPanel>
               <ExpansionPanelSummary
                 expandIcon={<ExpandMoreIcon/>}

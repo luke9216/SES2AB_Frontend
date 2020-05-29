@@ -11,6 +11,7 @@ import Resources from "./Resources/Resources";
 import { Route } from "react-router-dom";
 import Forum from './DiscussionBoard/Forum';
 import Thread from './DiscussionBoard/Thread';
+import Message from './DiscussionBoard/Message';
 
 export interface RoutingProps {}
 
@@ -25,6 +26,7 @@ export const Routing: React.SFC<RoutingProps> = () => (
       <HamburgerRoutes exact path="/workshop" screen={ToolBox} />
       <HamburgerRoutes exact path="/makeGate" screen={MakeGate} />
       <HamburgerRoutes exact path="/resources" screen={Resources} />
+      <HamburgerRoutes exact path="/createMessage" screen={Message} />
     </Switch>
   </BrowserRouter>
 );

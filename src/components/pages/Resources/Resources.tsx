@@ -16,7 +16,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
     <div>
       <Button className={classes.button} href="/resources/upload">Upload a resource</Button>
       <div>
-        <h1 className={classes.title1}>TextBooks</h1>
+        <h1 className={classes.title3}>TextBooks</h1>
 
         <Grid>
           <ExpansionPanel>
@@ -64,7 +64,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
       </div>
 
       <div>
-        <h1 className={classes.title1}>Lectures</h1>
+        <h1 className={classes.title3}>Lectures</h1>
 
         <Grid>
           <ExpansionPanel>
@@ -111,7 +111,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
       </div>
 
       <div>
-          <h1 className={classes.title1}>Videos</h1>
+          <h1 className={classes.title3}>Videos</h1>
           <Grid>
             <ExpansionPanel>
               <ExpansionPanelSummary

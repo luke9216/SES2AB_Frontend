@@ -7,9 +7,7 @@ import CircuitBoard from "./CircuitBoard";
 import { circuitUpload } from "./../../../services/CircuitService";
 import { toast } from "react-toastify";
 
-export interface ToolBoxProps {
-  props?: any;
-}
+export interface ToolBoxProps {}
 
 export interface ICircuitBoard {
   circuit: Array<any>;
@@ -19,7 +17,18 @@ export interface ICircuitBoard {
   currentHistoryIndex: number;
 }
 
-const ToolBox: React.SFC<ToolBoxProps> = () => {
+const ToolBox: React.SFC<ToolBoxProps> = (Props) => {
+  const onSubmit = () => {
+    /*     circuitUpload(circuitState.circuit).then((response) => {
+      if (response.status === 200) {
+        console.log("success:", response.data);
+      } else {
+        toast.error("An error occured. Please try again later");
+        console.log(response);
+      }
+    }); */
+  };
+
   const [circuitState, setCircuit] = React.useState({
     circuit: [],
     newCircuit: [],
@@ -124,17 +133,6 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
         currentHistoryIndex: newHistoryIndex,
       });
     }
-  };
-
-  const onSubmit = (event: any) => {
-    circuitUpload(circuitState.circuit).then((response) => {
-      if (response.status === 200) {
-        console.log("success:", response.data);
-      } else {
-        toast.error("An error occured. Please try again later");
-        console.log(response);
-      }
-    });
   };
 
   const classes = paperStyles();

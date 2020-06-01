@@ -1,5 +1,11 @@
 import * as React from "react";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
@@ -36,18 +42,14 @@ const SavedCircuits: React.SFC<SavedCircuitsProps> = ({
   circuitId,
   circuits,
 }) => {
+  const location = {
+    pathname: "/workshop/" + circuitId,
+    state: circuits as Array<any>,
+  };
   return (
     <div>
-      <h1>
-        <Link
-          className={classes.title1}
-          to={{
-            pathname: "/workshop/" + circuitId,
-            state: { savedCircuits: circuits as Array<string> },
-          }}
-        >
-          {circuitId}
-        </Link>
+      <h1 className={classes.title1}>
+        <Link to={location}>{circuitId}</Link>
       </h1>
     </div>
   );

@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import * as React from "react";
 import { Grid, Button, Tooltip } from "@material-ui/core";
 import GateTypes, { GateButtonTab } from "./Gates";
@@ -7,7 +8,9 @@ import CircuitBoard from "./CircuitBoard";
 import { circuitUpload } from "./../../../services/CircuitService";
 import { toast } from "react-toastify";
 
-export interface ToolBoxProps {}
+export interface ToolBoxProps {
+  props?: any;
+}
 
 export interface ICircuitBoard {
   circuit: Array<any>;
@@ -17,8 +20,25 @@ export interface ICircuitBoard {
   currentHistoryIndex: number;
 }
 
-const ToolBox: React.SFC<ToolBoxProps> = (Props) => {
+const ToolBox: React.SFC<ToolBoxProps> = () => {
+  const [circuitState, setCircuit] = React.useState({
+    circuit: [],
+    newCircuit: [],
+    circuitGate: 0,
+    circuitHistory: [[]],
+    currentHistoryIndex: 0,
+  } as ICircuitBoard);
+
+  /*   if (history.state !== null) {
+    const items = history.state.state.savedCircuits;
+    setCircuit({
+      ...circuitState,
+      circuit: items,
+    });
+  } */
+
   const onSubmit = () => {
+    console.log(history.state.state);
     /*     circuitUpload(circuitState.circuit).then((response) => {
       if (response.status === 200) {
         console.log("success:", response.data);
@@ -28,14 +48,6 @@ const ToolBox: React.SFC<ToolBoxProps> = (Props) => {
       }
     }); */
   };
-
-  const [circuitState, setCircuit] = React.useState({
-    circuit: [],
-    newCircuit: [],
-    circuitGate: 0,
-    circuitHistory: [[]],
-    currentHistoryIndex: 0,
-  } as ICircuitBoard);
 
   const onDragStart = (event: any, id: any) => {
     console.log("Dragging gate from toolbox", id);

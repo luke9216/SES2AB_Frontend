@@ -24,28 +24,6 @@ export interface ICircuitList {
   circuit: Array<any>;
 }
 
-/*       <h1 className={classes.title1}>Saved circuits!</h1>
-      <div>
-        <Grid>
-          <ExpansionPanel>
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography>Cicuit for assignment 1</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Link href="/workshop">Your circuit</Link>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-        </Grid>
-      </div> */
-/*   const location = {
-          pathname: "/workshop/" + circuitId,
-          state: circuits as Array<any>,
-        }; */
-
 const SavedCircuits: React.SFC<SavedCircuitsProps> = ({
   classes,
   handleTest,

@@ -15,11 +15,6 @@ const onTest = (item: any) => {
 };
 
 const SavedCircuitsContainer: React.SFC<SavedCircuitsContainerProps> = () => {
-  /*   const [savedCircuitState, setSaved] = React.useState({
-    circuitId: "circuit 1",
-    circuit: ["1", "2", "3"],
-  } as ICircuits);
- */
   return (
     <SavedCircuits
       classes={paperStyles()}

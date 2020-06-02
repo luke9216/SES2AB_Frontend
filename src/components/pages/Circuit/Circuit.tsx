@@ -32,7 +32,7 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
   const items = history.state;
   const circuit = circuitState.circuit;
 
-  if (items.state !== null && circuit.includes([""])) {
+  if (items !== null && circuit.length === 0) {
     setCircuit({
       ...circuitState,
       circuit: items.state,
@@ -41,10 +41,6 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
   } else console.log("Brand new circuit");
 
   const onSubmit = () => {
-    console.log(items);
-    console.log(items.state);
-    console.log(items.key);
-    console.log(circuit);
     /*     circuitUpload(circuitState.circuit).then((response) => {
       if (response.status === 200) {
         console.log("success:", response.data);

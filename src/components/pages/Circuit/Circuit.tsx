@@ -29,16 +29,22 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     currentHistoryIndex: 0,
   } as ICircuitBoard);
 
-  /*   if (history.state !== null) {
-    const items = history.state.state.savedCircuits;
+  const items = history.state;
+  const circuit = circuitState.circuit;
+
+  if (items.state !== null && circuit.includes([""])) {
     setCircuit({
       ...circuitState,
-      circuit: items,
+      circuit: items.state,
     });
-  } */
+    console.log(circuitState.circuit);
+  } else console.log("Brand new circuit");
 
   const onSubmit = () => {
-    console.log(history.state.state);
+    console.log(items);
+    console.log(items.state);
+    console.log(items.key);
+    console.log(circuit);
     /*     circuitUpload(circuitState.circuit).then((response) => {
       if (response.status === 200) {
         console.log("success:", response.data);

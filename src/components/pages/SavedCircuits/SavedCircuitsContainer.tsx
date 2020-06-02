@@ -1,6 +1,7 @@
 import * as React from "react";
 import SavedCircuits from "./SavedCircuits";
 import { paperStyles } from "./harryStyles";
+import CircuitList from "../../common/__data__/data.CircuitList.json";
 
 export interface SavedCircuitsContainerProps {}
 

@@ -12,11 +12,16 @@ import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ToolBox from "./../Circuit/Circuit";
+import { Button } from "@material-ui/core";
 export interface SavedCircuitsProps {
   classes?: any;
-  savedCircuits?: any;
-  circuitId?: any;
-  circuits?: any;
+  savedCircuits: Array<ICircuitList>;
+  handleTest: any;
+}
+
+export interface ICircuitList {
+  circuitId: string;
+  circuit: Array<any>;
 }
 
 /*       <h1 className={classes.title1}>Saved circuits!</h1>
@@ -36,21 +41,29 @@ export interface SavedCircuitsProps {
           </ExpansionPanel>
         </Grid>
       </div> */
+/*   const location = {
+          pathname: "/workshop/" + circuitId,
+          state: circuits as Array<any>,
+        }; */
 
 const SavedCircuits: React.SFC<SavedCircuitsProps> = ({
   classes,
-  circuitId,
-  circuits,
+  handleTest,
+  savedCircuits,
 }) => {
-  const location = {
-    pathname: "/workshop/" + circuitId,
-    state: circuits as Array<any>,
-  };
   return (
     <div>
-      <h1 className={classes.title1}>
-        <Link to={location}>{circuitId}</Link>
-      </h1>
+      <h1 className={classes.title1}>Your saved circuits!</h1>
+      {savedCircuits.map((item: ICircuitList, i) => (
+        <Link
+          to={{
+            pathname: "/workshop/" + item.circuitId,
+            state: item.circuit as Array<any>,
+          }}
+        >
+          <h1 className={classes.title1}>{item.circuitId}</h1>
+        </Link>
+      ))}
     </div>
   );
 };

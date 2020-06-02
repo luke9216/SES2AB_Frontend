@@ -1,5 +1,5 @@
 import * as React from "react";
-import SavedCircuits from "./SavedCircuits";
+import SavedCircuits, { ICircuitList } from "./SavedCircuits";
 import { paperStyles } from "./harryStyles";
 import CircuitList from "../../common/__data__/data.CircuitList.json";
 
@@ -10,17 +10,21 @@ export interface ICircuits {
   circuit: Array<string>;
 }
 
+const onTest = (item: any) => {
+  console.log(item);
+};
+
 const SavedCircuitsContainer: React.SFC<SavedCircuitsContainerProps> = () => {
-  const [savedCircuitState, setSaved] = React.useState({
+  /*   const [savedCircuitState, setSaved] = React.useState({
     circuitId: "circuit 1",
     circuit: ["1", "2", "3"],
   } as ICircuits);
-
+ */
   return (
     <SavedCircuits
       classes={paperStyles()}
-      circuitId={savedCircuitState.circuitId}
-      circuits={savedCircuitState.circuit}
+      savedCircuits={CircuitList as Array<ICircuitList>}
+      handleTest={onTest}
     />
   );
 };

@@ -12,7 +12,7 @@ export const paperStyles = makeStyles((theme) => ({
     padding: "10em 0 30px",
   },
   circuitGates: {
-    background: "grey",
+    background: "#BBDEFB",
     border: "solid",
     marginRight: "40px",
     width: "1000px",
@@ -35,8 +35,9 @@ export const paperStyles = makeStyles((theme) => ({
   },
 
   submit: {
-    color: "white",
-    backgroundColor: "#209F20",
+    color: "black",
+    backgroundColor: "#69f0ae",
+    border: "solid",
   },
 
   CircuitBoxFrame: {

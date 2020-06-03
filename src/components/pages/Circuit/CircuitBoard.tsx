@@ -18,7 +18,7 @@ const CircuitBoard: React.SFC<CircuitBoardProps> = ({
 }) => {
   const classes = paperStyles();
   return (
-    <Grid container direction="row" className={classes.circuitGates}>
+    <Grid container direction="row" className={classes.kenTest}>
       {gates.map((item, j) => (
         <div
           key={j}

@@ -50,7 +50,7 @@ const GateTypes: React.SFC<GateTypesProps> = ({
 
   function FormRow(gate1: String, gate2: String, map: Map<number, Gate>) {
     return (
-      <Grid container item xs={12} spacing={2}>
+      <Grid className={classes.gateBorder} container item xs={12} spacing={2}>
         {FormBtn(gate1, 0, map)}
         {FormBtn(gate2, 1, map)}
       </Grid>
@@ -80,14 +80,9 @@ const GateTypes: React.SFC<GateTypesProps> = ({
   return (
     <React.Fragment>
       {gateTypes.map((tab: GateButtonTab, i) => (
-        <Box 
-        border={1} 
-        borderBottom={0} 
-        borderRadius={5}
-        bgcolor="#bdbdbd"
-        >
-        <Grid key={i} item direction="row" >
-          <h2>{tab.name}</h2>
+      <Grid className={classes.border}>
+        <Grid className={classes.border} key={i}>
+          <h2 className={classes.titleGate}>{tab.name}</h2>
           {tab.gates.map((gate, gateNumber) => {
             if (formRowCount == 0) {
               gate1 = gate;
@@ -103,7 +98,7 @@ const GateTypes: React.SFC<GateTypesProps> = ({
             }
           })}
         </Grid>
-        </Box>
+      </Grid>
       ))}
           
     </React.Fragment>

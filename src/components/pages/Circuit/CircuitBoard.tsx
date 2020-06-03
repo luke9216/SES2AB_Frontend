@@ -29,7 +29,7 @@ const CircuitBoard: React.SFC<CircuitBoardProps> = ({
         >
           <Grid spacing={4}>
             <Tooltip title="To delete this gate hold down left CTRL and then left click!">
-              <Button key={j} onClick={(event) => handleDelete(event, j)}>
+              <Button className={classes.button} key={j} onClick={(event) => handleDelete(event, j)}>
                 {item}
               </Button>
             </Tooltip>

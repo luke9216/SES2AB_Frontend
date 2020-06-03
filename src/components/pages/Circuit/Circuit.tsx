@@ -6,6 +6,8 @@ import gateTypes from "../../common/__data__/data.gateTypes.json";
 import CircuitBoard from "./CircuitBoard";
 import { circuitUpload } from "./../../../services/CircuitService";
 import { toast } from "react-toastify";
+import UndoIcon from "../../../../node_modules/@material-ui/icons/Undo";
+import RedoIcon from "../../../../node_modules/@material-ui/icons/Redo";
 
 export interface ToolBoxProps {
   props?: any;
@@ -140,6 +142,32 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
   const classes = paperStyles();
   return (
     <div>
+    <Grid container spacing={1}>
+      <Grid item xs = {1}>
+        <Button className={classes.clear} variant="outlined" onClick={onClear}>Clear all</Button>
+      </Grid>
+      <Grid item xs = {2}>
+        <Button className={classes.do} startIcon={<UndoIcon />}
+            disabled={circuitState.circuitHistory.length === 1}
+            onClick={onUndo}
+        >
+        Undo
+        </Button>
+        <Button className={classes.do} startIcon={<RedoIcon />}
+            disabled={
+              circuitState.circuitHistory.length ===
+              circuitState.currentHistoryIndex + 1
+            }
+            onClick={onRedo}
+          >
+            Redo
+        </Button>
+
+      </Grid>
+      <Grid>
+        <Button className={classes.submit} variant="outlined" onClick={onSubmit}>Submit</Button>
+      </Grid>
+    </Grid>
       <h1 className={classes.title1}>ToolBox</h1>
       <div>
         <Grid container direction="row" spacing={5} className={classes.divTop}>
@@ -148,30 +176,11 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
             handleDragStart={onDragStart}
           />
         </Grid>
-        <Grid>
-          <Button className={classes.clear} variant="outlined" onClick={onClear}>Clear all</Button>
-          <Button
-            disabled={circuitState.circuitHistory.length === 1}
-            onClick={onUndo}
-          >
-            Undo
-          </Button>
-          <Button
-            disabled={
-              circuitState.circuitHistory.length ===
-              circuitState.currentHistoryIndex + 1
-            }
-            onClick={onRedo}
-          >
-            Redo
-          </Button>
-          <Button className={classes.submit} variant="outlined" onClick={onSubmit}>Submit</Button>
-        </Grid>
         <h1 className={classes.title1}>Circuit</h1>
         <div
           onDragOver={(e) => onDragOver(e)}
           onDrop={(e) => onDragDrop(e)}
-          className={classes.circuit}
+          className={classes.circuitFrame}
         >
           <CircuitBoard
             handleDelete={onDelete}
@@ -181,7 +190,10 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
             gates={circuitState.circuit}
           />
         </div>
+
       </div>
+      <Grid className={classes.kenTest}>
+          </Grid>
     </div>
   );
 };

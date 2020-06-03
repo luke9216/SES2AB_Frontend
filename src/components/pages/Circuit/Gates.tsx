@@ -7,7 +7,9 @@ import {
   makeStyles,
   createStyles,
   Theme,
+  Box,
 } from "@material-ui/core";
+import { paperStyles } from "./harryStyles";
 
 interface GateTypesProps {
   gateTypes: Array<GateButtonTab>;
@@ -24,12 +26,13 @@ export interface GateButtonTab {
 class Gate {
   type: String;
   buttonTab: GateButtonTab;
-
+  
   constructor(type: String, buttonTab: GateButtonTab) {
     this.type = type;
     this.buttonTab = buttonTab;
   }
 }
+
 
 const generateKey = (pre: String) => {
   return `${pre}_${new Date().getTime()}`;
@@ -39,6 +42,7 @@ const GateTypes: React.SFC<GateTypesProps> = ({
   gateTypes,
   handleDragStart,
 }) => {
+  const classes = paperStyles();
   var gate1 = new String();
   var gate2 = new String();
   var formRowCount = 0;
@@ -63,7 +67,7 @@ const GateTypes: React.SFC<GateTypesProps> = ({
             onDragStart={(e) => handleDragStart(e, gate)}
           >
             <Tooltip title={map.get(id)!.buttonTab.description}>
-              <Button key={generateKey(gate)} variant="contained">
+              <Button className={classes.button} key={generateKey(gate)} variant="contained">
                 {map.get(id)!.type}
               </Button>
             </Tooltip>
@@ -76,7 +80,13 @@ const GateTypes: React.SFC<GateTypesProps> = ({
   return (
     <React.Fragment>
       {gateTypes.map((tab: GateButtonTab, i) => (
-        <Grid key={i} item direction="row">
+        <Box 
+        border={1} 
+        borderBottom={0} 
+        borderRadius={5}
+        bgcolor="#bdbdbd"
+        >
+        <Grid key={i} item direction="row" >
           <h2>{tab.name}</h2>
           {tab.gates.map((gate, gateNumber) => {
             if (formRowCount == 0) {
@@ -93,7 +103,9 @@ const GateTypes: React.SFC<GateTypesProps> = ({
             }
           })}
         </Grid>
+        </Box>
       ))}
+          
     </React.Fragment>
   );
 };

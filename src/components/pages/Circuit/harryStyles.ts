@@ -73,9 +73,8 @@ export const paperStyles = makeStyles((theme) => ({
 
          titleGate: {
            color: "black",
-           padding: "0 30px",
            justifyContent: "center",
-           marginLeft: "15px",
+           alignContent: "center",
            display: "flex",
          },
 

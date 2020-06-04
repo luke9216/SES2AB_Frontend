@@ -151,10 +151,10 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
             variant="outlined"
             onClick={onClear}
           >
-            Clear all
+            Clear
           </Button>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={1}>
           <Button
             className={classes.do}
             startIcon={<UndoIcon />}
@@ -163,6 +163,8 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
           >
             Undo
           </Button>
+        </Grid>
+        <Grid item xs={1}>
           <Button
             className={classes.do}
             startIcon={<RedoIcon />}
@@ -175,7 +177,7 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
             Redo
           </Button>
         </Grid>
-        <Grid>
+        <Grid item xs={1}>
           <Button
             className={classes.submit}
             variant="outlined"

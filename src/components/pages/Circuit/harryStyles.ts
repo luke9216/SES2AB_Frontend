@@ -41,17 +41,19 @@ export const paperStyles = makeStyles((theme) => ({
            justifyContent: "center",
            display: "flex",
          },
+
          clear: {
            color: "white",
            backgroundColor: "#FF3220",
            textAlign: "center",
-           margin: "auto",
+           height: "100%",
          },
 
          submit: {
            color: "white",
            backgroundColor: "#209F20",
-           margin: "auto",
+           textAlign: "center",
+           height: "100%",
          },
 
          gateBorder: {
@@ -65,9 +67,8 @@ export const paperStyles = makeStyles((theme) => ({
          do: {
            border: "1px solid black",
            color: "black",
-           marginLeft: "5px",
            backgroundColor: "white",
-           margin: "auto",
+           height: "100%",
          },
 
          titleGate: {

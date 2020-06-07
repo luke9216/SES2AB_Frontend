@@ -19,8 +19,8 @@ import Assignment from "./../../pages/Assignment";
 export const AssignmentRoutes: FunctionComponent = () => (
   <BrowserRouter>
     <Switch>
-      <HamburgerRoutes path="/" screen={Assignment} />
-      <HamburgerRoutes path="/create" screen={AssignmentCreate} />
+      <HamburgerRoutes exact path="/assignments" screen={Assignment} />
+      <HamburgerRoutes exact path="/assignments/create" screen={AssignmentCreate} />
     </Switch>
   </BrowserRouter>
 );

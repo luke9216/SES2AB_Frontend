@@ -8,7 +8,6 @@ import { circuitUpload } from "./../../../services/CircuitService";
 import { toast } from "react-toastify";
 import UndoIcon from "../../../../node_modules/@material-ui/icons/Undo";
 import RedoIcon from "../../../../node_modules/@material-ui/icons/Redo";
-import circuitFrame from "../../../images/test.png"
 
 export interface ToolBoxProps {
   props?: any;
@@ -31,6 +30,66 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     currentHistoryIndex: 0,
   } as ICircuitBoard);
 
+  const [startState, setStart] = React.useState({
+    startCircuit: 0,
+    startIndex: 0,
+    symbol: "|0>",
+  });
+
+  const onStartCircuit = (event: any) => {
+    setStart({
+      ...startState,
+      startCircuit: startState.startCircuit + 1,
+    });
+  };
+  console.log(startState.startCircuit);
+  if (startState.startCircuit !== startState.startIndex) {
+    switch (startState.startCircuit) {
+      case 1:
+        setStart({
+          ...startState,
+          startIndex: 1,
+          symbol: "|1>",
+        });
+        break;
+      case 2:
+        setStart({
+          ...startState,
+          startIndex: 2,
+          symbol: "|+>",
+        });
+        break;
+      case 3:
+        setStart({
+          ...startState,
+          startIndex: 3,
+          symbol: "|->",
+        });
+        break;
+      case 4:
+        setStart({
+          ...startState,
+          startIndex: 4,
+          symbol: "|i>",
+        });
+        break;
+      case 5:
+        setStart({
+          ...startState,
+          startIndex: 5,
+          symbol: "|-i>",
+        });
+        break;
+      case 6:
+        setStart({
+          ...startState,
+          startCircuit: 0,
+          startIndex: 0,
+          symbol: "|0>",
+        });
+        break;
+    }
+  }
 
   const onDragStart = (event: any, id: any) => {
     console.log("Dragging gate from toolbox", id);
@@ -78,6 +137,10 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
 
   const onDragGateEnd = (event: any, index: number) => {
     event.preventDefault();
+  };
+
+  const onNewCircuit = (event: any) => {
+    console.log("Lets create a new circuit!");
   };
 
   const onDelete = (event: any, index: number) => {
@@ -199,9 +262,11 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
         <div
           onDragOver={(e) => onDragOver(e)}
           onDrop={(e) => onDragDrop(e)}
-          className={classes.circuitFrame}
+          className={classes.kenTest}
         >
           <CircuitBoard
+            symbol={startState.symbol}
+            handleStartCircuit={onStartCircuit}
             handleDelete={onDelete}
             handleDrag={onDragGateOver}
             handleDragStart={onDragGateStart}
@@ -210,6 +275,11 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
           />
         </div>
       </div>
+      <div
+        onDrop={(e) => onNewCircuit(e)}
+        onDragOver={(e) => onNewCircuit(e)}
+        className={classes.dropCircuit}
+      ></div>
     </div>
   );
 };

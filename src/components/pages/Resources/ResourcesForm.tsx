@@ -17,14 +17,34 @@ export interface ResourcesFormProps {
   event?: any;
 }
 
+export interface Iresource {
+  category: string;
+  file: FileList;
+  description: string;
+}
+
 const Resources: React.SFC<ResourcesFormProps> = () => {
   const classes = resourcesStyles();
-  const [age, setAge] = React.useState("");
   const [open, setOpen] = React.useState(false);
   const [redirect, setRedirect] = React.useState(false);
+  const [resource, setResource] = React.useState(({
+    category: "",
+    file: null,
+    description: "",
+  } as unknown) as Iresource);
 
   const handleChange = (event: any) => {
-    setAge(event.target.value);
+    setResource({
+      ...resource,
+      category: event.target.value,
+    });
+  };
+
+  const handleTextChange = (event: any) => {
+    setResource({
+      ...resource,
+      [event.target.name]: event.target.value,
+    });
   };
 
   const handleClose = () => {
@@ -36,6 +56,10 @@ const Resources: React.SFC<ResourcesFormProps> = () => {
   };
 
   const onChangeHandler = (event: any) => {
+    setResource({
+      ...resource,
+      file: event?.target.files[0],
+    });
     console.log(event?.target.files[0]);
   };
 
@@ -48,7 +72,8 @@ const Resources: React.SFC<ResourcesFormProps> = () => {
     //     console.log(response);
     //   }
     // });
-    setRedirect(true);
+    console.log(resource);
+    //setRedirect(true);
   };
 
   if (redirect === true) {
@@ -83,12 +108,9 @@ const Resources: React.SFC<ResourcesFormProps> = () => {
                 open={open}
                 onClose={handleClose}
                 onOpen={handleOpen}
-                value={age}
+                value={resource.category}
                 onChange={handleChange}
               >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
                 <MenuItem value={"textbook"}>Textbook</MenuItem>
                 <MenuItem value={"lecture"}>Lecture</MenuItem>
                 <MenuItem value={"video"}>Video</MenuItem>
@@ -102,13 +124,18 @@ const Resources: React.SFC<ResourcesFormProps> = () => {
               className={classes.input}
               type="file"
               name="file"
+              id="resource"
               onChange={onChangeHandler}
             />
           </label>
 
           <label>
             <h2 className={classes.title2}>Description</h2>
-            <textarea className={classes.textarea}></textarea>
+            <textarea
+              className={classes.textarea}
+              name="description"
+              onChange={handleTextChange}
+            ></textarea>
           </label>
           <Button
             variant="outlined"

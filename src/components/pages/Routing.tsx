@@ -1,9 +1,8 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
 import { HamburgerRoutes } from "./../common/Hamburger/HamburgerRoutes";
 import LoginPage from "./Login/LoginPage";
 import HomePage from "./Homepage/HomePage";
-import DiscussionBoard from "./DiscussionBoard/DiscussionBoard";
 import Assignment from "./Assignment";
 import ToolBox from "./Circuit/Circuit";
 import MakeGate from "./makeGate/MakeGate";
@@ -12,7 +11,6 @@ import ResourcesForm from "./Resources/ResourcesForm";
 import { Route } from "react-router-dom";
 import Forum from "./DiscussionBoard/Forum";
 import Thread from "./DiscussionBoard/Thread";
-import SavedCircuits from "./SavedCircuits/SavedCircuits";
 import SavedCircuitsContainer from "./SavedCircuits/SavedCircuitsContainer";
 import { AssignmentRoutes } from "./../containers/Assignment/AssignmentRoutes";
 

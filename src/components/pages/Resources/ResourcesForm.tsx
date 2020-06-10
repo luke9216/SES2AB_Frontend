@@ -1,19 +1,27 @@
 import React from "react";
-import { Grid, MenuItem, FormControl, Select, InputLabel, Button } from "@material-ui/core";
+import {
+  Grid,
+  MenuItem,
+  FormControl,
+  Select,
+  InputLabel,
+  Button,
+} from "@material-ui/core";
 import { resourcesStyles } from "./style";
-import { resourceUpload } from '../../../services/ResourceService';
+import { resourceUpload } from "../../../services/ResourceService";
 import { toast } from "react-toastify";
+import { Redirect } from "react-router-dom";
 
 export interface ResourcesFormProps {
   props?: any;
   event?: any;
 }
 
-
 const Resources: React.SFC<ResourcesFormProps> = () => {
   const classes = resourcesStyles();
-  const [age, setAge] = React.useState('');
+  const [age, setAge] = React.useState("");
   const [open, setOpen] = React.useState(false);
+  const [redirect, setRedirect] = React.useState(false);
 
   const handleChange = (event: any) => {
     setAge(event.target.value);
@@ -28,7 +36,7 @@ const Resources: React.SFC<ResourcesFormProps> = () => {
   };
 
   const onChangeHandler = (event: any) => {
-    console.log(event?.target.files[0])
+    console.log(event?.target.files[0]);
   };
 
   const onSubmit = (event: any) => {
@@ -40,53 +48,79 @@ const Resources: React.SFC<ResourcesFormProps> = () => {
     //     console.log(response);
     //   }
     // });
+    setRedirect(true);
   };
 
+  if (redirect === true) {
+    return <Redirect to="/resources" />;
+  }
   return (
-  <div className={classes.div}>
-    <Button variant="outlined" className={classes.button} onClick={() => window.history.go(-1)}>Back</Button>
-    <div>
-    <Grid container direction = "column" justify = "center" alignItems="center">
-        <h1 className={classes.title1}>Upload</h1>
-        <label>
-          <h2 className={classes.title2}>Category</h2>
+    <div className={classes.div}>
+      <Button
+        variant="outlined"
+        className={classes.button}
+        onClick={() => window.history.go(-1)}
+      >
+        Back
+      </Button>
+      <div>
+        <Grid
+          container
+          direction="column"
+          alignItems="center"
+          className={classes.form}
+        >
+          <h1 className={classes.title1}>Upload</h1>
+          <label>
+            <h2 className={classes.title2}>Category</h2>
 
-          <FormControl className={classes.formControl}>
-            <InputLabel id="category-label">Categories</InputLabel>
+            <FormControl className={classes.formControl}>
+              <InputLabel id="category-label">Categories</InputLabel>
 
-            <Select
-              labelId="category-label"
-              id="category"
-              open={open}
-              onClose={handleClose}
-              onOpen={handleOpen}
-              value={age}
-              onChange={handleChange}
-            >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              <MenuItem value={"textbook"}>Textbook</MenuItem>
-              <MenuItem value={"lecture"}>Lecture</MenuItem>
-              <MenuItem value={"video"}>Video</MenuItem>
-            </Select>
-          </FormControl>
-        </label>
+              <Select
+                labelId="category-label"
+                id="category"
+                open={open}
+                onClose={handleClose}
+                onOpen={handleOpen}
+                value={age}
+                onChange={handleChange}
+              >
+                <MenuItem value="">
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={"textbook"}>Textbook</MenuItem>
+                <MenuItem value={"lecture"}>Lecture</MenuItem>
+                <MenuItem value={"video"}>Video</MenuItem>
+              </Select>
+            </FormControl>
+          </label>
 
-        <label>
+          <label>
             <h2 className={classes.title2}>File</h2>
-            <input className={classes.input} type="file" name="file" onChange={onChangeHandler}/>
-        </label>
-          
-        <label>
-          <h2 className={classes.title2}>Description</h2>
-          <textarea className={classes.textarea}></textarea>
-        </label>
-        <Button variant="outlined" onClick={onSubmit} className={classes.button}>Submit</Button>
-    </Grid>
+            <input
+              className={classes.input}
+              type="file"
+              name="file"
+              onChange={onChangeHandler}
+            />
+          </label>
+
+          <label>
+            <h2 className={classes.title2}>Description</h2>
+            <textarea className={classes.textarea}></textarea>
+          </label>
+          <Button
+            variant="outlined"
+            onClick={onSubmit}
+            className={classes.button}
+          >
+            Submit
+          </Button>
+        </Grid>
+      </div>
     </div>
-  </div>
-    );
+  );
 };
 
 export default Resources;

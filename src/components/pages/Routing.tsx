@@ -23,13 +23,13 @@ export const Routing: React.SFC<RoutingProps> = () => (
       <HamburgerRoutes exact path="/" screen={HomePage} />
       <HamburgerRoutes exact path="/discussionboard" screen={Forum} />
       <HamburgerRoutes exact path="/createthread" screen={Thread} />
+      <HamburgerRoutes exact path="/resources" screen={Resources} />
       <HamburgerRoutes exact path="/assignments" screen={Assignment} />
       <HamburgerRoutes path="/workshop" screen={ToolBox} />
-      <HamburgerRoutes screen={AssignmentRoutes} />
       <HamburgerRoutes exact path="/makeGate" screen={MakeGate} />
-      <HamburgerRoutes exact path="/resources" screen={Resources} />
-      <HamburgerRoutes exact path="/resources/upload" screen={ResourcesForm} />
       <HamburgerRoutes exact path="/circuits" screen={SavedCircuitsContainer} />
+      <HamburgerRoutes exact path="/resources/upload" screen={ResourcesForm} />
+      <HamburgerRoutes screen={AssignmentRoutes} />
     </Switch>
   </BrowserRouter>
 );

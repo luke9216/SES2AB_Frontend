@@ -18,7 +18,6 @@ export interface SavedCircuitsProps {
   savedCircuits: Array<ICircuitList>;
   handleTest: any;
 }
-
 export interface ICircuitList {
   circuitId: string;
   circuit: Array<any>;
@@ -33,14 +32,28 @@ const SavedCircuits: React.SFC<SavedCircuitsProps> = ({
     <div>
       <h1 className={classes.title1}>Your saved circuits!</h1>
       {savedCircuits.map((item: ICircuitList, i) => (
-        <Link
-          to={{
-            pathname: "/workshop/" + item.circuitId,
-            state: item.circuit as Array<any>,
-          }}
-        >
-          <h2 className={classes.title2}>{item.circuitId}</h2>
-        </Link>
+        <ExpansionPanel>
+          <ExpansionPanelSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>{item.circuitId}</Typography>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <Typography>
+              <Link
+                className={classes.title2}
+                to={{
+                  pathname: "/workshop/" + item.circuitId,
+                  state: item.circuit as Array<any>,
+                }}
+              >
+                Click here to see your circuit
+              </Link>
+            </Typography>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
       ))}
     </div>
   );

@@ -14,14 +14,20 @@ const Resources: React.SFC<ResourcesProps> = () => {
 
   return (
     <div>
-      <Button variant="outlined" className={classes.button} href="/resources/upload">Upload a resource</Button>
+      <Button
+        variant="outlined"
+        className={classes.button}
+        href="/resources/upload"
+      >
+        Upload a resource
+      </Button>
       <div>
         <h1 className={classes.title3}>TextBooks</h1>
 
         <Grid>
           <ExpansionPanel>
             <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon/>}
+              expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
@@ -35,7 +41,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
 
           <ExpansionPanel>
             <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon/>}
+              expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
@@ -49,13 +55,13 @@ const Resources: React.SFC<ResourcesProps> = () => {
 
           <ExpansionPanel>
             <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon/>}
+              expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
               <Typography>TextBook 3</Typography>
             </ExpansionPanelSummary>
-            
+
             <ExpansionPanelDetails>
               <Typography>TEXTBOOK PDF LINK GOES HERE!</Typography>
             </ExpansionPanelDetails>
@@ -69,7 +75,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
         <Grid>
           <ExpansionPanel>
             <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon/>}
+              expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
@@ -82,11 +88,11 @@ const Resources: React.SFC<ResourcesProps> = () => {
           </ExpansionPanel>
 
           <ExpansionPanel>
-              <ExpansionPanelSummary
-                expandIcon={<ExpandMoreIcon/>}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
               <Typography>Lecture 2</Typography>
             </ExpansionPanelSummary>
 
@@ -97,7 +103,7 @@ const Resources: React.SFC<ResourcesProps> = () => {
 
           <ExpansionPanel>
             <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon/>}
+              expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
@@ -111,49 +117,49 @@ const Resources: React.SFC<ResourcesProps> = () => {
       </div>
 
       <div>
-          <h1 className={classes.title3}>Videos</h1>
-          <Grid>
-            <ExpansionPanel>
-              <ExpansionPanelSummary
-                expandIcon={<ExpandMoreIcon/>}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography>Video 1</Typography>
-              </ExpansionPanelSummary>
+        <h1 className={classes.title3}>Videos</h1>
+        <Grid>
+          <ExpansionPanel>
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography>Video 1</Typography>
+            </ExpansionPanelSummary>
 
-              <ExpansionPanelDetails>
-                <Typography>VIDEO LINK GOES HERE!</Typography>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
+            <ExpansionPanelDetails>
+              <Typography>VIDEO LINK GOES HERE!</Typography>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
 
-            <ExpansionPanel>
-              <ExpansionPanelSummary
-                expandIcon={<ExpandMoreIcon/>}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography>Video 2</Typography>
-              </ExpansionPanelSummary>
+          <ExpansionPanel>
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography>Video 2</Typography>
+            </ExpansionPanelSummary>
 
-              <ExpansionPanelDetails>
-                <Typography>VIDEO LINK GOES HERE!</Typography>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
+            <ExpansionPanelDetails>
+              <Typography>VIDEO LINK GOES HERE!</Typography>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
 
-            <ExpansionPanel>
-              <ExpansionPanelSummary
-                expandIcon={<ExpandMoreIcon/>}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography>Video 3</Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails>
-                <Typography>VIDEO LINK GOES HERE!</Typography>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
-          </Grid>
+          <ExpansionPanel>
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography>Video 3</Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Typography>VIDEO LINK GOES HERE!</Typography>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+        </Grid>
       </div>
     </div>
   );

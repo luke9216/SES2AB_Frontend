@@ -39,7 +39,7 @@ const SavedCircuits: React.SFC<SavedCircuitsProps> = ({
             state: item.circuit as Array<any>,
           }}
         >
-          <h1 className={classes.title1}>{item.circuitId}</h1>
+          <h2 className={classes.title2}>{item.circuitId}</h2>
         </Link>
       ))}
     </div>

@@ -14,6 +14,7 @@ import Forum from "./DiscussionBoard/Forum";
 import Thread from "./DiscussionBoard/Thread";
 import SavedCircuits from "./SavedCircuits/SavedCircuits";
 import SavedCircuitsContainer from "./SavedCircuits/SavedCircuitsContainer";
+import { AssignmentRoutes } from "./../containers/Assignment/AssignmentRoutes";
 
 export interface RoutingProps {}
 
@@ -26,6 +27,7 @@ export const Routing: React.SFC<RoutingProps> = () => (
       <HamburgerRoutes exact path="/createthread" screen={Thread} />
       <HamburgerRoutes exact path="/assignments" screen={Assignment} />
       <HamburgerRoutes path="/workshop" screen={ToolBox} />
+      <HamburgerRoutes screen={AssignmentRoutes} />
       <HamburgerRoutes exact path="/makeGate" screen={MakeGate} />
       <HamburgerRoutes exact path="/resources" screen={Resources} />
       <HamburgerRoutes exact path="/resources/upload" screen={ResourcesForm} />

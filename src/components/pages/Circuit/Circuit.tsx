@@ -31,7 +31,6 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     currentHistoryIndex: 0,
   } as ICircuitBoard);
 
-<<<<<<< HEAD
   const [startState, setStart] = React.useState({
     startCircuit: 0,
     startIndex: 0,
@@ -92,7 +91,6 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
         break;
     }
   }
-=======
   const items = history.state;
   const circuit = circuitState.circuit;
 
@@ -114,7 +112,6 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
       }
     }); */
   };
->>>>>>> savedCircuits
 
   const onDragStart = (event: any, id: any) => {
     console.log("Dragging gate from toolbox", id);

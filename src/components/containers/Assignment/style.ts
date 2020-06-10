@@ -45,4 +45,15 @@ export const assignmentStyles = makeStyles((theme) => ({
         marginBottom: "auto",
     },
 
+    FormBackground: {
+        color: "white",
+        marginTop: "auto",
+        marginBottom: "auto",
+    },
+
+    Buttonlocation: {
+        justifyContent: "center",
+        display: "flex",
+    },
+
 }));

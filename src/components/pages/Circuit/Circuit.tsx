@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import * as React from "react";
 import { Grid, Button, Tooltip } from "@material-ui/core";
 import GateTypes, { GateButtonTab } from "./Gates";
@@ -30,6 +31,7 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     currentHistoryIndex: 0,
   } as ICircuitBoard);
 
+<<<<<<< HEAD
   const [startState, setStart] = React.useState({
     startCircuit: 0,
     startIndex: 0,
@@ -90,6 +92,29 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
         break;
     }
   }
+=======
+  const items = history.state;
+  const circuit = circuitState.circuit;
+
+  if (items !== null && circuit.length === 0) {
+    setCircuit({
+      ...circuitState,
+      circuit: items.state,
+    });
+    console.log(circuitState.circuit);
+  } else console.log("Brand new circuit");
+
+  const onSubmit = () => {
+    /*     circuitUpload(circuitState.circuit).then((response) => {
+      if (response.status === 200) {
+        console.log("success:", response.data);
+      } else {
+        toast.error("An error occured. Please try again later");
+        console.log(response);
+      }
+    }); */
+  };
+>>>>>>> savedCircuits
 
   const onDragStart = (event: any, id: any) => {
     console.log("Dragging gate from toolbox", id);
@@ -191,17 +216,6 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
         currentHistoryIndex: newHistoryIndex,
       });
     }
-  };
-
-  const onSubmit = (event: any) => {
-    circuitUpload(circuitState.circuit).then((response) => {
-      if (response.status === 200) {
-        console.log("success:", response.data);
-      } else {
-        toast.error("An error occured. Please try again later");
-        console.log(response);
-      }
-    });
   };
 
   const classes = paperStyles();

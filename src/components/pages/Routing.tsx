@@ -13,6 +13,7 @@ import { Route } from "react-router-dom";
 import Forum from "./DiscussionBoard/Forum";
 import Thread from "./DiscussionBoard/Thread";
 import SavedCircuits from "./SavedCircuits/SavedCircuits";
+import SavedCircuitsContainer from "./SavedCircuits/SavedCircuitsContainer";
 
 export interface RoutingProps {}
 
@@ -24,11 +25,11 @@ export const Routing: React.SFC<RoutingProps> = () => (
       <HamburgerRoutes exact path="/discussionboard" screen={Forum} />
       <HamburgerRoutes exact path="/createthread" screen={Thread} />
       <HamburgerRoutes exact path="/assignments" screen={Assignment} />
-      <HamburgerRoutes exact path="/workshop" screen={ToolBox} />
+      <HamburgerRoutes path="/workshop" screen={ToolBox} />
       <HamburgerRoutes exact path="/makeGate" screen={MakeGate} />
       <HamburgerRoutes exact path="/resources" screen={Resources} />
       <HamburgerRoutes exact path="/resources/upload" screen={ResourcesForm} />
-      <HamburgerRoutes exact path="/circuits" screen={SavedCircuits} />
+      <HamburgerRoutes exact path="/circuits" screen={SavedCircuitsContainer} />
     </Switch>
   </BrowserRouter>
 );

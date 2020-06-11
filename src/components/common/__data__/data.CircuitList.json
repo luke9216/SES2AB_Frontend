@@ -1,21 +1,21 @@
 [{
         "circuitId": "1",
-        "circuit": ["1", "2", "3"]
+        "circuit": ["Z", "S", "o"]
     },
     {
         "circuitId": "2",
-        "circuit": ["4", "5", "6"]
+        "circuit": ["Z", "Z^t", "Y^t"]
     },
     {
         "circuitId": "3",
-        "circuit": ["6", "7", "8"]
+        "circuit": ["S", "|1><1|", "Bloch"]
     },
     {
         "circuitId": "4",
-        "circuit": ["a", "b", "c"]
+        "circuit": ["S", "Swap", "H"]
     },
     {
         "circuitId": "5",
-        "circuit": ["d", "e", "f"]
+        "circuit": ["Y", "Z", "Z^t"]
     }
 ]

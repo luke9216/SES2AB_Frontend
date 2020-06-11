@@ -24,7 +24,7 @@ export interface ICircuitBoard {
 
 const ToolBox: React.SFC<ToolBoxProps> = () => {
   const [circuitState, setCircuit] = React.useState({
-    circuit: ["1", "2", "3"],
+    circuit: [],
     newCircuit: [],
     circuitGate: 0,
     circuitHistory: [[]],

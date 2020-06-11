@@ -5,7 +5,10 @@ import GateTypes, { GateButtonTab } from "./Gates";
 import { paperStyles } from "./harryStyles";
 import gateTypes from "../../common/__data__/data.gateTypes.json";
 import CircuitBoard from "./CircuitBoard";
-import { circuitUpload } from "./../../../services/CircuitService";
+import {
+  circuitUpload,
+  circuitRetrieve,
+} from "./../../../services/CircuitService";
 import { toast } from "react-toastify";
 import UndoIcon from "../../../../node_modules/@material-ui/icons/Undo";
 import RedoIcon from "../../../../node_modules/@material-ui/icons/Redo";
@@ -103,14 +106,14 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
   } else console.log("Brand new circuit");
 
   const onSubmit = () => {
-    /*     circuitUpload(circuitState.circuit).then((response) => {
+    circuitUpload(circuitState.circuit).then((response) => {
       if (response.status === 200) {
         console.log("success:", response.data);
       } else {
         toast.error("An error occured. Please try again later");
         console.log(response);
       }
-    }); */
+    });
   };
 
   const onDragStart = (event: any, id: any) => {

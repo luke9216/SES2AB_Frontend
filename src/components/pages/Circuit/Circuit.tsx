@@ -109,6 +109,7 @@ const ToolBox: React.SFC<ToolBoxProps> = () => {
     circuitUpload(circuitState.circuit).then((response) => {
       if (response.status === 200) {
         console.log("success:", response.data);
+        alert("Your circuit has been saved");
       } else {
         toast.error("An error occured. Please try again later");
         console.log(response);

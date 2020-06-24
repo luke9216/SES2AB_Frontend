@@ -10,7 +10,8 @@ const MessageBoard: React.SFC<MessageBoardProps> = () => {
 return (
     <div>
         <body>
-            <h1> className={classes.title1}>Thread: Progress Report</h1>
+            <h1 className={classes.title1}>Thread: Progress Report</h1>
+            <div> Hello world </div>
         </body>
     </div>
 )
